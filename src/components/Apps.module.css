@@ -1,0 +1,151 @@
+/* margem horizontal vem da classe global .section */
+.wrap {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+.wrap > :global(.section) { width: 100%; }
+
+.titleRow {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: end;
+  margin-top: 0.4rem;
+}
+
+.subtitle {
+  font-size: clamp(0.92rem, 1.3vw, 1.05rem);
+  color: var(--muted);
+  font-weight: 300;
+  line-height: 1.9;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  margin-top: 3.5rem;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 2.4rem 2rem 2rem;
+  transition: border-color 0.4s, transform 0.4s, background 0.4s;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(160deg, var(--gold-dim) 0%, transparent 60%);
+  opacity: 0; transition: opacity 0.4s;
+}
+
+.card:hover { border-color: rgba(201,169,110,0.22); transform: translateY(-4px); }
+.card:hover::before { opacity: 1; }
+
+.icon {
+  width: 44px; height: 44px;
+  background: var(--gold-dim);
+  border: 1px solid rgba(201,169,110,0.2);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold);
+  margin-bottom: 1.6rem;
+  position: relative; z-index: 1;
+}
+
+.badge {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  font-family: var(--font-mono); font-size: 0.56rem;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 0.3rem 0.75rem; border-radius: 999px;
+  background: rgba(201,169,110,0.1); color: var(--gold);
+  border: 1px solid rgba(201,169,110,0.2);
+  margin-bottom: 1.6rem;
+  position: relative; z-index: 1;
+}
+
+.pulseDot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 0 0 var(--gold-glow);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(201,169,110,0.5); }
+  70%  { box-shadow: 0 0 0 6px rgba(201,169,110,0); }
+  100% { box-shadow: 0 0 0 0 rgba(201,169,110,0); }
+}
+
+.title {
+  font-family: var(--font-display); font-size: 1.1rem; font-weight: 600;
+  color: var(--white); letter-spacing: -0.01em; margin-bottom: 0.7rem;
+  position: relative; z-index: 1;
+}
+
+.desc {
+  font-size: 0.84rem; color: var(--muted);
+  font-weight: 300; line-height: 1.85;
+  position: relative; z-index: 1;
+}
+
+.blur {
+  position: absolute;
+  bottom: -40%; right: -20%;
+  width: 60%; height: 70%;
+  background: radial-gradient(circle, var(--gold-glow), transparent 70%);
+  filter: blur(40px);
+  opacity: 0;
+  transition: opacity 0.5s;
+  pointer-events: none;
+}
+.card:hover .blur { opacity: 0.6; }
+
+/* footer strip */
+.foot {
+  display: flex;
+  align-items: center;
+  gap: clamp(2rem, 4vw, 3.5rem);
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+.footItem { display: flex; flex-direction: column; gap: 0.25rem; }
+.footNum {
+  font-family: var(--font-num);
+  font-variant-numeric: tabular-nums;
+  font-size: 1.3rem; font-weight: 600;
+  color: var(--gold); letter-spacing: -0.01em;
+}
+.footLabel {
+  font-family: var(--font-mono);
+  font-size: 0.6rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--muted);
+}
+.footCta {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 0.68rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--gold);
+  text-decoration: none; padding: 0.7rem 1.2rem;
+  border: 1px solid rgba(201,169,110,0.25); border-radius: 999px;
+  transition: background var(--t-med), border-color var(--t-med);
+}
+.footCta:hover { background: var(--gold-dim); border-color: rgba(201,169,110,0.5); }
+
+@media (max-width: 900px) {
+  .titleRow { grid-template-columns: 1fr; gap: 1.4rem; align-items: start; }
+  .grid { grid-template-columns: 1fr 1fr; }
+  .footCta { margin-left: 0; }
+}
+@media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .pulseDot { animation: none; }
+}

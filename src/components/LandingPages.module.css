@@ -1,0 +1,240 @@
+/* ============================================================
+   LandingPages — margem horizontal pelos wrappers globais
+   (.inner / .section-full). Aqui só o conteúdo.
+   ============================================================ */
+
+.wrap { background: var(--bg); }
+
+/* Tela 1 — título + descrição + features, ocupando 100vh */
+.header {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: clamp(7rem, 12vh, 10rem) var(--pad-x) clamp(4rem, 8vh, 6rem);
+}
+.header :global(.inner) { max-width: var(--max-w); margin: 0 auto; width: 100%; }
+
+/* linha superior: título à esquerda, descrição à direita */
+.headTop {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: end;
+  margin-bottom: clamp(2.5rem, 5vh, 4rem);
+}
+
+.desc {
+  font-size: clamp(1rem, 1.4vw, 1.12rem);
+  color: var(--muted);
+  font-weight: 300;
+  line-height: 1.95;
+}
+
+.featGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+}
+
+.feat {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: flex-start;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 1.8rem 1.6rem;
+  min-height: 200px;
+  transition: border-color var(--t-med), transform var(--t-med), background var(--t-med);
+}
+.feat:hover {
+  border-color: rgba(201,169,110,0.22);
+  transform: translateY(-4px);
+  background: var(--surface2);
+}
+
+.featIcon {
+  width: 42px; height: 42px;
+  flex-shrink: 0;
+  background: var(--gold-dim);
+  border: 1px solid rgba(201,169,110,0.18);
+  border-radius: 11px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold);
+}
+.featIcon svg { width: 20px; height: 20px; }
+
+.featTitle {
+  font-family: var(--font-display);
+  font-size: 1rem; font-weight: 600;
+  color: var(--white); letter-spacing: -0.01em;
+  margin-bottom: 0.4rem;
+}
+.featDesc {
+  font-size: 0.84rem; color: var(--muted);
+  font-weight: 300; line-height: 1.7;
+}
+
+/* Bloco: processo */
+.processoRow {
+  padding: clamp(4rem, 8vh, 7rem) 0;
+  border-top: 1px solid var(--border);
+}
+
+.processoGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin-top: 2.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+
+.step {
+  padding: clamp(2rem, 3vw, 3rem) clamp(1.6rem, 2.5vw, 2.4rem);
+  border-right: 1px solid var(--border);
+  transition: background var(--t-med);
+}
+.step:last-child { border-right: none; }
+.step:hover { background: var(--surface2); }
+
+.stepNum {
+  font-family: var(--font-mono);
+  font-size: 0.58rem; letter-spacing: 0.18em;
+  color: var(--gold); text-transform: uppercase;
+  margin-bottom: 1.4rem;
+}
+.stepTitle {
+  font-family: var(--font-display);
+  font-size: 1.05rem; font-weight: 600;
+  color: var(--white); letter-spacing: -0.01em;
+  margin-bottom: 0.8rem;
+}
+.stepDesc {
+  font-size: 0.82rem; color: var(--muted);
+  font-weight: 300; line-height: 1.8;
+}
+
+/* Bloco: portfólio */
+.portfolioRow {
+  padding: clamp(4rem, 8vh, 7rem) 0 0;
+  border-top: 1px solid var(--border);
+}
+
+.portfolioGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+}
+
+.pCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  cursor: none;
+  transition: border-color var(--t-med), transform var(--t-med);
+}
+.pCard:hover { border-color: rgba(201,169,110,0.22); transform: translateY(-4px); }
+
+.pThumb {
+  position: relative;
+  aspect-ratio: 16/10;
+  background: var(--surface2);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+  padding: 1.4rem;
+}
+
+.pBadge {
+  position: absolute; top: 0.9rem; right: 0.9rem;
+  font-family: var(--font-mono); font-size: 0.55rem;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(201,169,110,0.12);
+  border: 1px solid rgba(201,169,110,0.2);
+  padding: 0.25rem 0.6rem; border-radius: 999px;
+}
+
+.pInfo { padding: 1.5rem; }
+.pTitle {
+  font-family: var(--font-display);
+  font-size: 0.98rem; font-weight: 600;
+  color: var(--white); margin-bottom: 0.55rem;
+}
+.pDesc {
+  font-size: 0.8rem; color: var(--muted);
+  font-weight: 300; line-height: 1.75;
+}
+
+/* Card vazio (CTA) */
+.pEmpty {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center; gap: 1rem;
+  background: var(--surface);
+  border: 1px dashed var(--border2);
+  border-radius: var(--r-lg);
+  padding: 2rem 1.6rem;
+}
+.pEmptyIcon {
+  width: 48px; height: 48px; border-radius: 50%;
+  background: var(--gold-dim);
+  border: 1px solid rgba(201,169,110,0.18);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold);
+}
+.pEmpty p { font-size: 0.84rem; color: var(--muted); font-weight: 300; line-height: 1.7; }
+.pEmpty a {
+  font-family: var(--font-mono); font-size: 0.68rem;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--gold); text-decoration: none;
+  transition: opacity var(--t-fast);
+}
+.pEmpty a:hover { opacity: 0.75; }
+
+/* Mock screen */
+.mockWrap {
+  width: 100%; border-radius: var(--r-sm);
+  overflow: hidden; border: 1px solid var(--border2);
+  background: var(--surface);
+}
+.mockBar {
+  display: flex; align-items: center; gap: 0.4rem;
+  padding: 0.5rem 0.7rem;
+  background: var(--surface2);
+  border-bottom: 1px solid var(--border);
+}
+.mockDot { width: 8px; height: 8px; border-radius: 50%; }
+.mockUrl {
+  margin-left: 0.6rem; font-family: var(--font-mono);
+  font-size: 0.58rem; color: var(--muted);
+}
+.mockBody { padding: 1.2rem; }
+.mockLogo {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: 1.1rem; color: var(--white); margin-bottom: 1rem;
+}
+.mockLogo span { color: var(--gold); }
+.mockLines { display: flex; flex-direction: column; gap: 0.5rem; }
+.mockLine { height: 7px; border-radius: 4px; background: var(--muted3); }
+
+/* Responsivo */
+@media (max-width: 980px) {
+  .header { min-height: auto; padding-top: 8rem; padding-bottom: 4rem; }
+  .headTop { grid-template-columns: 1fr; gap: 1.6rem; align-items: start; }
+  .featGrid { grid-template-columns: 1fr 1fr; }
+  .processoGrid { grid-template-columns: 1fr; }
+  .step { border-right: none; border-bottom: 1px solid var(--border); }
+  .step:last-child { border-bottom: none; }
+  .portfolioGrid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 600px) {
+  .featGrid { grid-template-columns: 1fr; }
+  .feat { min-height: 0; }
+  .portfolioGrid { grid-template-columns: 1fr; }
+}

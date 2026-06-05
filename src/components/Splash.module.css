@@ -1,0 +1,245 @@
+.splash {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: none;
+  transform: translateZ(0); /* promote splash to its own GPU layer */
+  will-change: transform;
+}
+
+/* Drifting cloud / glow formations */
+.clouds {
+  position: absolute;
+  inset: -20%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.cloud {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.cloud1 {
+  width: 52vw;
+  height: 52vw;
+  top: 6%;
+  left: -8%;
+  background: radial-gradient(circle, rgba(201,169,110,0.22), transparent 68%);
+}
+
+.cloud2 {
+  width: 44vw;
+  height: 44vw;
+  bottom: 2%;
+  right: -6%;
+  background: radial-gradient(circle, rgba(30,34,48,0.85), transparent 70%);
+}
+
+.cloud3 {
+  width: 34vw;
+  height: 34vw;
+  top: 38%;
+  left: 42%;
+  background: radial-gradient(circle, rgba(226,196,138,0.10), transparent 72%);
+}
+
+/* Star/particle canvas */
+.canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+}
+
+/* Center stage */
+.inner {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 2rem;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.6rem;
+  opacity: 0;
+}
+
+.logoWrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+/* soft glow breathing behind the wordmark */
+.logoWrap::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 120%; height: 220%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(ellipse at center, rgba(201,169,110,0.16), transparent 65%);
+  filter: blur(30px);
+  z-index: -1;
+  opacity: 0;
+  animation: glowBreathe 4.5s ease-in-out 1.4s infinite;
+}
+
+@keyframes glowBreathe {
+  0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(0.96); }
+  50%      { opacity: 1;   transform: translate(-50%, -50%) scale(1.04); }
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(4.5rem, 16vw, 11rem);
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  color: var(--white);
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  overflow: hidden;        /* máscara: esconde as letras até subirem */
+  padding: 0 0.04em 0.1em; /* respiro lateral/inferior p/ não cortar 'v' e o ponto */
+}
+
+/* Animação de entrada em CSS puro (não depende do JS/GSAP).
+   Assim o logo SEMPRE aparece, mesmo se algo falhar no script. */
+.logo span {
+  display: inline-block;
+  transform: translateY(110%);
+  will-change: transform;
+  animation: letterRise 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.logo span:nth-child(1) { animation-delay: 0.45s; }
+.logo span:nth-child(2) { animation-delay: 0.53s; }
+.logo span:nth-child(3) { animation-delay: 0.61s; }
+.logo span:nth-child(4) { animation-delay: 0.69s; }
+.logo span:nth-child(5) { animation-delay: 0.77s; }
+
+@keyframes letterRise {
+  to { transform: translateY(0); }
+}
+
+.dot {
+  color: var(--gold);
+}
+
+.tagline {
+  font-family: var(--font-body);
+  font-size: clamp(0.78rem, 1.6vw, 0.95rem);
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin-top: 1.4rem;
+  opacity: 0;
+}
+
+/* Loader bar + counter */
+.loaderWrap {
+  position: absolute;
+  bottom: clamp(2rem, 7vh, 4.5rem);
+  left: 0;
+  right: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0 var(--pad-x);
+}
+
+.bar {
+  width: min(340px, 70vw);
+  height: 2px;
+  background: var(--border2);
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.barFill {
+  position: absolute;
+  inset: 0;
+  width: 0%;
+  background: linear-gradient(90deg, var(--gold), var(--gold2));
+  box-shadow: 0 0 14px var(--gold-glow);
+  transition: width 0.12s linear;
+}
+
+.barFill::after {
+  content: '';
+  position: absolute;
+  top: 50%; right: -2px;
+  width: 6px; height: 6px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: var(--gold2);
+  box-shadow: 0 0 10px 2px var(--gold-glow);
+}
+
+.count {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+}
+
+.count b {
+  color: var(--white);
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Skip */
+.skip {
+  position: absolute;
+  top: clamp(1.4rem, 4vh, 2.4rem);
+  right: clamp(1.4rem, 4vw, 2.6rem);
+  z-index: 4;
+  background: none;
+  border: 1px solid var(--border2);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 0.55rem 1.1rem;
+  border-radius: var(--r-full);
+  cursor: pointer;
+  transition: color var(--t-fast), border-color var(--t-fast), background var(--t-fast);
+}
+
+.skip:hover {
+  color: var(--white);
+  border-color: var(--border3);
+  background: rgba(255,255,255,0.03);
+}
+
+@media (max-width: 768px) {
+  .splash { cursor: auto; }
+  .cloud { filter: blur(48px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cloud { animation: none !important; }
+  .logo span { animation: none !important; transform: translateY(0) !important; }
+  .logoWrap::before { animation: none !important; opacity: 0.7; }
+}

@@ -1,0 +1,209 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 760px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-align: center;
+}
+
+.canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.inner {
+  position: relative;
+  z-index: 2;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.pre {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 2.2rem;
+  opacity: 0.85;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(6rem, 15vw, 13rem);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 1;
+  color: var(--white);
+  margin-bottom: 2.4rem;
+  padding-top: 0.08em; /* respiro p/ não cortar o topo das letras */
+}
+
+.dot { color: var(--gold); }
+
+.sub {
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+  color: var(--muted);
+  font-weight: 300;
+  line-height: 1.9;
+  max-width: 420px;
+  margin-bottom: 3.5rem;
+}
+
+.sub em {
+  font-style: normal;
+  color: var(--gold2);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 2.2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  background: var(--gold);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 1rem 2.4rem;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: box-shadow 0.4s var(--ease-out), transform 0.4s var(--ease-out), background 0.3s;
+  cursor: none;
+}
+
+.btnPrimary:hover {
+  box-shadow: 0 16px 48px rgba(201, 169, 110, 0.28);
+  transform: translateY(-3px);
+  background: var(--gold2);
+}
+
+.btnGhost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 300;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.3s;
+  cursor: none;
+}
+
+.btnGhost:hover { color: var(--white); }
+
+.scrollHint {
+  position: absolute;
+  bottom: 2.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0.3;
+  animation: bounce 2.4s ease-in-out infinite;
+}
+
+.scrollHint span {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.scrollHint svg { color: var(--muted); }
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(6px); }
+}
+
+.fadeBottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 260px;
+  background: linear-gradient(to top, var(--bg), transparent);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* trust strip */
+.trust {
+  position: absolute;
+  bottom: clamp(5.5rem, 12vh, 8rem);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: clamp(1.4rem, 3vw, 2.6rem);
+  padding: 1rem 1.8rem;
+  background: rgba(13, 14, 22, 0.5);
+  border: 1px solid var(--border);
+  border-radius: var(--r-full);
+  backdrop-filter: blur(14px);
+  white-space: nowrap;
+  opacity: 0;
+}
+.trustItem { display: flex; flex-direction: column; align-items: center; gap: 0.15rem; }
+.trustNum {
+  font-family: var(--font-num);
+  font-variant-numeric: tabular-nums;
+  font-size: clamp(0.9rem, 1.4vw, 1.05rem);
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: -0.01em;
+}
+.trustLabel {
+  font-family: var(--font-mono);
+  font-size: 0.52rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.trustSep { width: 1px; height: 26px; background: var(--border2); flex-shrink: 0; }
+
+@media (max-width: 768px) {
+  .title { font-size: clamp(5rem, 22vw, 8rem); }
+  .actions { flex-direction: column; gap: 1.4rem; }
+  .scrollHint { display: none; }
+  .trust {
+    gap: 0.9rem; padding: 0.8rem 1rem; bottom: 2rem;
+    flex-wrap: nowrap; overflow-x: auto; max-width: 92vw;
+    border-radius: var(--r-lg);
+  }
+  .trustSep { height: 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scrollHint { animation: none; }
+}

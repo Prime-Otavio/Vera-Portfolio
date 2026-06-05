@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MTK446W6');</script>
+<!-- End Google Tag Manager -->
+<title>Ronaldo Rocha — Engenharia Civil | Sorocaba, Campinas e Piracicaba</title>
+<meta name="description" content="Projetos, obras, reformas, regularizações e gerenciamento de obras com acompanhamento técnico do início ao fim. Sorocaba, Campinas, Piracicaba e região." />
+<meta name="author" content="Ronaldo Ferreira da Rocha — CREA 5070175755" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Ronaldo Rocha — Engenharia Civil" />
+<meta property="og:description" content="Projetos, obras e acompanhamento técnico do início ao fim." />
+<meta property="og:locale" content="pt_BR" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --bone:#0d1f3c; --paper:#13294c; --paper-2:#0a1830;
+  --ink:#eaf1fb; --ink-soft:#9fb6d4; --line:rgba(214,230,247,.14);
+  --navy:#0d1f3c; --navy-2:#1a4993; --gold:#c8a96e; --gold-2:#e0c48f; --ice:#d6e6f7;
+  --maxw:1240px; --r:3px;
+  --ff-disp:'Fraunces',Georgia,serif; --ff-body:'Manrope',system-ui,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--ff-body);background:var(--bone);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,5vw,56px)}
+.disp{font-family:var(--ff-disp);font-weight:400;line-height:1.04;letter-spacing:-.015em}
+.eyebrow{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.muted{color:var(--ink-soft)}
+em{font-style:italic}
+
+/* ---------- NAV ---------- */
+nav{position:fixed;top:0;left:0;width:100%;z-index:100;display:flex;align-items:center;justify-content:space-between;
+  padding:1.3rem clamp(20px,5vw,56px);transition:background .4s,padding .4s,border-color .4s,box-shadow .4s;border-bottom:1px solid transparent}
+nav.solid{background:rgba(13,31,60,.9);backdrop-filter:blur(14px);border-color:var(--line);padding-top:1rem;padding-bottom:1rem;box-shadow:0 6px 30px -22px rgba(0,0,0,.5)}
+.logo{font-family:var(--ff-disp);font-size:1.42rem;letter-spacing:-.01em}
+.logo b{font-weight:600}
+.logo span{color:var(--gold);font-weight:500}
+nav .links{display:flex;align-items:center;gap:2.2rem}
+.navlink{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--ink);position:relative;padding:.2rem 0;cursor:pointer;background:none;border:none;font-family:var(--ff-body)}
+.navlink::after{content:'';position:absolute;left:0;bottom:-3px;width:0;height:1.5px;background:var(--gold);transition:width .3s}
+.navlink:hover::after,.navlink.active::after{width:100%}
+.navlink.active{color:var(--gold)}
+.nav-pill{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:#15233f!important;padding:.6rem 1.2rem;border-radius:999px;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;transition:background .3s,transform .2s;cursor:pointer;border:none}
+.nav-pill::after{display:none}
+.nav-pill:hover{background:var(--gold-2);transform:translateY(-1px)}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
+.burger span{width:24px;height:2px;background:var(--ink);transition:.3s}
+
+/* ---------- PAGE ROUTING ---------- */
+.page{display:none}
+.page.active{display:block;animation:pageIn .55s cubic-bezier(.2,.7,.2,1)}
+@keyframes pageIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+/* ---------- REVEAL ---------- */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+/* ---------- HERO ---------- */
+.hero{padding:9.5rem 0 4.5rem}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,5rem);align-items:center}
+.hero h1{font-size:clamp(2.7rem,6.4vw,5.4rem);margin:1.4rem 0}
+.hero h1 em{color:var(--ink-soft);display:block}
+.hero h1 .g{color:var(--gold)}
+.hero p.lead{font-size:1.08rem;max-width:46ch;color:var(--ink-soft)}
+.hero .rule{width:60px;height:2px;background:var(--gold);margin:1.8rem 0}
+.hero-actions{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:2rem}
+.hero-figure{position:relative;aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;background:var(--paper-2);box-shadow:0 50px 80px -40px rgba(22,36,63,.45)}
+.hero-figure img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s ease}
+.hero-figure:hover img{transform:scale(1.05)}
+.hero-figure .stamp{position:absolute;left:0;bottom:0;background:var(--paper-2);padding:.9rem 1.3rem;border-top-right-radius:var(--r)}
+.hero-figure .stamp .s1{font-family:var(--ff-disp);color:var(--gold);font-size:.92rem;letter-spacing:.18em}
+.hero-figure .stamp .s2{font-size:.74rem;color:var(--ink-soft);letter-spacing:.08em}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--ff-body);font-weight:600;font-size:.86rem;letter-spacing:.03em;padding:1rem 1.7rem;border-radius:999px;cursor:pointer;border:1px solid transparent;transition:transform .2s,background .25s,color .25s,border-color .25s}
+.btn-fill{background:var(--gold);color:#1a1407}
+.btn-fill:hover{background:var(--gold-2);transform:translateY(-2px)}
+.btn-ghost{border-color:var(--ink);color:var(--ink);background:transparent}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+.btn svg{width:17px;height:17px}
+
+/* ---------- META STRIP ---------- */
+.metas{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-top:3rem}
+.meta{background:var(--bone);padding:1.9rem 1.4rem;text-align:center}
+.meta .n{font-family:var(--ff-disp);font-size:clamp(2.2rem,4vw,3rem);color:var(--gold);line-height:1}
+.meta .l{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-top:.5rem}
+.meta .chk{width:46px;height:46px;border-radius:50%;border:1.5px solid var(--gold);color:var(--gold);display:grid;place-items:center;margin:0 auto .3rem}
+.meta .chk svg{width:22px;height:22px}
+
+/* ---------- SECTION HEAD ---------- */
+.shead{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;margin:6rem 0 2.4rem;flex-wrap:wrap}
+.shead h2{font-size:clamp(2rem,4.6vw,3.3rem)}
+.shead h2 em{color:var(--gold)}
+.shead p{max-width:42ch;color:var(--ink-soft);font-size:.98rem}
+
+/* ---------- FEATURED PROJECTS ---------- */
+.feat{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+.pcard{cursor:pointer;display:block;background:none;border:none;text-align:left;font-family:var(--ff-body);padding:0}
+.pcard .ph{aspect-ratio:3/4;border-radius:var(--r);overflow:hidden;background:var(--paper-2);position:relative}
+.pcard .ph img{width:100%;height:100%;object-fit:cover;transition:transform .9s ease}
+.pcard:hover .ph img{transform:scale(1.06)}
+.pcard .ph::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(22,24,27,.4));opacity:0;transition:opacity .4s}
+.pcard:hover .ph::after{opacity:1}
+.pcat{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600;margin:1rem 0 .25rem}
+.pcard h3{font-family:var(--ff-disp);font-size:1.35rem;font-weight:500}
+.pcard .pcap{font-size:.86rem;color:var(--ink-soft);margin-top:.2rem}
+
+/* ---------- SERVICES (editorial list) ---------- */
+.svc-list{border-top:1px solid var(--line)}
+.svc-row{display:grid;grid-template-columns:auto 1fr auto;gap:1.4rem;align-items:center;padding:1.5rem .4rem;border-bottom:1px solid var(--line);cursor:pointer;transition:padding-left .3s,background .3s}
+.svc-row:hover{padding-left:1.2rem;background:var(--paper)}
+.svc-row .sn{font-family:var(--ff-disp);color:var(--gold);font-size:1rem}
+.svc-row .st{font-family:var(--ff-disp);font-size:clamp(1.3rem,2.6vw,1.85rem);font-weight:400}
+.svc-row .sd{display:none;color:var(--ink-soft);font-size:.92rem;max-width:50ch}
+.svc-row .sgo{color:var(--ink-soft);opacity:0;transform:translateX(-8px);transition:.3s}
+.svc-row:hover .sgo{opacity:1;transform:none;color:var(--gold)}
+.svc-row .sgo svg{width:22px;height:22px}
+
+/* ---------- CTA BAND ---------- */
+.cta{margin:6rem 0 0;background:linear-gradient(160deg,#16386a,#0b1c38);color:var(--ink);border:1px solid rgba(200,169,110,.45);border-radius:var(--r);padding:clamp(2.6rem,6vw,4.5rem);text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 46px,rgba(255,255,255,.025) 46px,rgba(255,255,255,.025) 47px)}
+.cta h2{font-size:clamp(1.9rem,4.5vw,3rem);position:relative}
+.cta h2 em{color:var(--gold-2)}
+.cta p{position:relative;color:rgba(214,230,247,.78);max-width:48ch;margin:1rem auto 2rem}
+
+/* ---------- PROJETOS PAGE ---------- */
+.page-head{padding:9.5rem 0 1rem}
+.page-head h1{font-size:clamp(2.6rem,6vw,4.6rem)}
+.page-head h1 em{color:var(--gold)}
+.page-head p{max-width:52ch;color:var(--ink-soft);margin-top:1rem;font-size:1.05rem}
+.filters{display:flex;gap:.6rem;flex-wrap:wrap;margin:2.4rem 0 2.6rem}
+.filter{font-family:var(--ff-body);font-size:.78rem;letter-spacing:.06em;font-weight:600;padding:.6rem 1.2rem;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;transition:.25s}
+.filter:hover{border-color:var(--gold)}
+.filter.active{background:var(--ink);color:var(--bone);border-color:var(--ink)}
+.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;padding-bottom:4rem}
+.proj-grid .pcard.wide{grid-column:span 2}
+@media(min-width:901px){.proj-grid .pcard.wide .ph{aspect-ratio:16/11}}
+
+/* ---------- SOBRE + CONTATO ---------- */
+.about{padding:9.5rem 0 1rem;display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.about-fig{aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;background:var(--paper-2);box-shadow:0 40px 70px -38px rgba(22,36,63,.4)}
+.about-fig img{width:100%;height:100%;object-fit:cover}
+.about h1{font-size:clamp(2.2rem,4.8vw,3.6rem);margin:1.1rem 0}
+.about h1 em{color:var(--gold)}
+.about p{color:var(--ink-soft);margin-bottom:1rem;max-width:54ch}
+.creatag{display:inline-block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold);border-radius:999px;padding:.4rem 1rem;margin:.4rem 0}
+.regions{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.8rem}
+.region-tag{font-size:.78rem;background:rgba(200,169,110,.12);color:var(--ice);padding:.4rem .9rem;border-radius:999px;border:1px solid rgba(200,169,110,.3)}
+
+.contact{padding:5rem 0 1rem;display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+.contact h2{font-size:clamp(1.9rem,4vw,2.8rem);margin-bottom:1.2rem}
+.contact h2 em{color:var(--gold)}
+.clinks{display:flex;flex-direction:column;gap:.8rem;margin-top:1.6rem}
+.clink{display:flex;align-items:center;gap:1rem;background:var(--paper);padding:1rem 1.2rem;border-radius:var(--r);border:1px solid var(--line);cursor:pointer;transition:transform .25s,box-shadow .25s}
+.clink:not(.static):hover{transform:translateX(5px);box-shadow:0 18px 36px -24px rgba(22,36,63,.5)}
+.clink .ci{flex:0 0 44px;width:44px;height:44px;border-radius:50%;background:var(--gold);color:var(--navy);display:grid;place-items:center}
+.clink .cl{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+.clink .cv{font-weight:600}
+
+/* form */
+form.lead{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:clamp(1.6rem,3vw,2.3rem)}
+.ftitle{font-family:var(--ff-disp);font-size:1.6rem;margin-bottom:1.4rem}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.fg{margin-bottom:1rem;display:flex;flex-direction:column}
+.fg label{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:.4rem;font-weight:600}
+.fg input,.fg select,.fg textarea{font-family:var(--ff-body);font-size:.92rem;padding:.8rem .9rem;border:1px solid var(--line);border-radius:var(--r);background:rgba(255,255,255,.05);color:var(--ink);transition:border-color .25s}
+.fg input:focus,.fg select:focus,.fg textarea:focus{outline:none;border-color:var(--gold)}
+.fg textarea{min-height:90px;resize:vertical}
+.fg select option{background:#0d1f3c;color:#eaf1fb}
+.fg.invalid input,.fg.invalid select{border-color:#c0564f}
+.fhint{font-size:.8rem;color:#c0564f;min-height:1px;margin-bottom:.5rem}
+.btn-submit{width:100%;background:var(--gold);color:#15233f;border:none;font-family:var(--ff-body);font-weight:600;font-size:.95rem;padding:1rem;border-radius:999px;cursor:pointer;transition:background .25s,transform .2s}
+.btn-submit:hover{background:var(--gold-2);transform:translateY(-2px)}
+.flegal{font-size:.74rem;color:var(--ink-soft);text-align:center;margin-top:.8rem}
+
+/* map */
+.mapwrap{margin-top:2rem;border-radius:var(--r);overflow:hidden;border:1px solid var(--line)}
+#google-map{width:100%;height:360px;background:var(--paper-2)}
+.mapcards{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-top:.8rem}
+.mapcard{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:1rem;text-align:center;cursor:pointer;transition:.25s}
+.mapcard:hover,.mapcard.ativo{border-color:var(--gold);background:var(--paper-2);transform:translateY(-3px)}
+.mapcard h4{font-family:var(--ff-disp);font-size:1.05rem}
+.mapcard p{font-size:.74rem;color:var(--ink-soft)}
+
+/* footer */
+footer{margin-top:6rem;border-top:1px solid var(--line);padding:3rem clamp(20px,5vw,56px) 2.4rem}
+.foot-in{max-width:var(--maxw);margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.foot-logo{font-family:var(--ff-disp);font-size:1.3rem}
+.foot-logo span{color:var(--gold)}
+.foot-copy{font-size:.78rem;color:var(--ink-soft)}
+.foot-links{display:flex;gap:1.4rem}
+.foot-links button{background:none;border:none;font-family:var(--ff-body);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);cursor:pointer;transition:color .25s}
+.foot-links button:hover{color:var(--gold)}
+.placeholder-note{font-size:.74rem;color:var(--ink-soft);text-align:center;margin:1.5rem auto 0;max-width:60ch;opacity:.8}
+
+/* whatsapp float */
+.wa{position:fixed;bottom:22px;right:22px;z-index:90;width:56px;height:56px;border-radius:50%;background:var(--navy);border:1.5px solid var(--gold);display:grid;place-items:center;cursor:pointer;box-shadow:0 16px 36px -12px rgba(22,36,63,.6);transition:transform .25s;animation:waIn .6s 1.2s both}
+.wa:hover{transform:scale(1.08)}
+.wa svg{width:27px;height:27px;fill:var(--gold)}
+@keyframes waIn{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:900px){
+  nav .links{position:fixed;inset:0 0 0 auto;width:80%;max-width:330px;height:100vh;background:var(--paper);flex-direction:column;justify-content:center;align-items:flex-start;gap:1.6rem;padding:2.5rem;transform:translateX(100%);transition:transform .4s cubic-bezier(.2,.8,.2,1);box-shadow:-20px 0 60px rgba(0,0,0,.18)}
+  nav .links.open{transform:none}
+  .navlink{font-size:1rem}
+  .burger{display:flex}
+  .hero-grid,.about,.contact{grid-template-columns:1fr}
+  .hero-figure{max-width:440px}
+  .about-fig{max-width:420px;order:-1}
+  .feat,.proj-grid{grid-template-columns:repeat(2,1fr)}
+  .proj-grid .pcard.wide{grid-column:span 2}
+  .metas{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:560px){
+  .hero{padding:8rem 0 3rem}
+  .feat,.proj-grid,.mapcards{grid-template-columns:1fr}
+  .proj-grid .pcard.wide{grid-column:span 1}
+  .frow{grid-template-columns:1fr}
+  .hero-actions{flex-direction:column}
+  .btn{justify-content:center}
+  .foot-in{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MTK446W6"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- ============ NAV ============ -->
+<nav id="nav">
+  <button class="logo navlink" data-go="home" style="background:none;border:none;cursor:pointer;padding:0"><b>Ronaldo</b> <span>Rocha</span></button>
+  <div class="links" id="navlinks">
+    <button class="navlink" data-go="home">Início</button>
+    <button class="navlink" data-go="projetos">Projetos</button>
+    <button class="navlink" data-go="sobre">Sobre</button>
+    <button class="nav-pill" data-wpp="hero">Orçamento</button>
+  </div>
+  <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- ============ PÁGINA: INÍCIO ============ -->
+<main class="page" id="page-home">
+  <section class="hero wrap">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow rv">Engenharia Civil · CREA 5070175755</p>
+        <h1 class="disp rv">Obras que começam <span class="g">no detalhe</span><em>e terminam na confiança.</em></h1>
+        <div class="rule rv"></div>
+        <p class="lead rv">Projetos, reformas, regularizações e gerenciamento de obras com acompanhamento técnico do início ao fim — em Sorocaba, Campinas, Piracicaba e região.</p>
+        <div class="hero-actions rv">
+          <button class="btn btn-fill" data-wpp="hero">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.47-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37s-1.04 1.02-1.04 2.48 1.07 2.88 1.22 3.07c.15.2 2.1 3.2 5.08 4.49.7.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.12-.27-.2-.57-.35z"/></svg>
+            Solicitar orçamento
+          </button>
+          <button class="btn btn-ghost" data-go="projetos">Ver projetos</button>
+        </div>
+      </div>
+      <div class="hero-figure rv">
+        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=900&q=80&auto=format" alt="Edifício residencial em construção com estrutura aparente" loading="lazy" />
+        <div class="stamp"><div class="s1 disp">15 anos</div><div class="s2">de obra acompanhada de perto</div></div>
+      </div>
+    </div>
+
+    <div class="metas rv">
+      <div class="meta"><div class="n disp">400+</div><div class="l">Projetos entregues</div></div>
+      <div class="meta"><div class="n disp">15+</div><div class="l">Anos de experiência</div></div>
+      <div class="meta"><div class="n disp">3</div><div class="l">Regiões atendidas</div></div>
+      <div class="meta"><div class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div><div class="l">Atendimento técnico personalizado</div></div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="shead rv">
+      <h2 class="disp">Projetos em <em>destaque</em></h2>
+      <p>Uma amostra do trabalho — do residencial ao comercial, do projeto à entrega.</p>
+    </div>
+    <div class="feat" id="feat-grid"></div>
+    <div style="text-align:center;margin-top:2.4rem" class="rv">
+      <button class="btn btn-ghost" data-go="projetos">Ver todos os projetos</button>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="shead rv">
+      <h2 class="disp">O que eu <em>faço</em></h2>
+      <p>Escolha um serviço e fale comigo direto no WhatsApp.</p>
+    </div>
+    <div class="svc-list rv" id="svc-list"></div>
+  </section>
+
+  <section class="wrap">
+    <div class="cta rv">
+      <h2 class="disp">Vamos tirar seu projeto <em>do papel?</em></h2>
+      <p>Conversa sem compromisso para entender sua obra, prazo e orçamento.</p>
+      <button class="btn btn-fill" data-wpp="hero" style="position:relative">Falar no WhatsApp</button>
+    </div>
+  </section>
+</main>
+
+<!-- ============ PÁGINA: PROJETOS ============ -->
+<main class="page" id="page-projetos">
+  <section class="wrap page-head">
+    <p class="eyebrow rv">Portfólio</p>
+    <h1 class="disp rv">Cada obra, um <em>compromisso</em></h1>
+    <p class="rv">Seleção de projetos residenciais, comerciais e de reforma e regularização acompanhados do início ao fim.</p>
+    <div class="filters rv" id="filters"></div>
+  </section>
+  <section class="wrap">
+    <div class="proj-grid" id="proj-grid"></div>
+    <p class="placeholder-note">As imagens e títulos acima são provisórios, para demonstrar o layout. Quando o Ronaldo enviar as fotos reais das obras, basta trocar — o site já está montado para isso.</p>
+  </section>
+</main>
+
+<!-- ============ PÁGINA: SOBRE + CONTATO ============ -->
+<main class="page" id="page-sobre">
+  <section class="wrap about">
+    <div class="about-fig rv"><img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80&auto=format" alt="Engenheiro civil analisando projeto" loading="lazy" /></div>
+    <div>
+      <p class="eyebrow rv">Quem é</p>
+      <h1 class="disp rv">Ronaldo <em>Rocha</em></h1>
+      <p class="rv">Engenheiro civil registrado no CREA, com sólida trajetória em projetos residenciais, comerciais e industriais. Une técnica, organização e compromisso para transformar ideias em obras bem executadas.</p>
+      <p class="rv">Cada projeto recebe atenção singular — do esboço inicial ao acompanhamento final da obra — buscando qualidade, prazo e clareza em cada etapa.</p>
+      <span class="creatag rv">CREA · 5070175755 · SP</span>
+      <div class="regions rv">
+        <span class="region-tag">Sorocaba</span><span class="region-tag">Campinas</span><span class="region-tag">Piracicaba</span><span class="region-tag">Região</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap contact" id="contato-sec">
+    <div class="rv">
+      <p class="eyebrow">Contato</p>
+      <h2 class="disp">Vamos construir <em>juntos?</em></h2>
+      <p class="muted">Fale comigo para discutir seu projeto, tirar dúvidas ou solicitar um orçamento sem compromisso.</p>
+      <div class="clinks">
+        <div class="clink" data-wpp="geral" data-contact="whatsapp">
+          <span class="ci"><svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.47-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37s-1.04 1.02-1.04 2.48 1.07 2.88 1.22 3.07c.15.2 2.1 3.2 5.08 4.49.7.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.12-.27-.2-.57-.35z"/></svg></span>
+          <div><div class="cl">WhatsApp</div><div class="cv">(11) 99541-5612</div></div>
+        </div>
+        <a class="clink" href="https://instagram.com/ronaldorocha_engenheiro" target="_blank" rel="noopener" data-contact="instagram">
+          <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor" stroke="none"/></svg></span>
+          <div><div class="cl">Instagram</div><div class="cv">@ronaldorocha_engenheiro</div></div>
+        </a>
+        <div class="clink static">
+          <span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></span>
+          <div><div class="cl">Regiões atendidas</div><div class="cv">Sorocaba · Campinas · Piracicaba</div></div>
+        </div>
+      </div>
+      <div class="mapwrap"><div id="google-map"></div></div>
+      <div class="mapcards">
+        <div class="mapcard" data-regiao="sorocaba"><h4 class="disp">Sorocaba</h4><p>Cidade e região</p></div>
+        <div class="mapcard" data-regiao="campinas"><h4 class="disp">Campinas</h4><p>Cidade e região</p></div>
+        <div class="mapcard" data-regiao="piracicaba"><h4 class="disp">Piracicaba</h4><p>Cidade e região</p></div>
+      </div>
+    </div>
+
+    <form class="lead rv" id="lead-form" novalidate>
+      <div class="ftitle disp">Solicite seu orçamento</div>
+      <div class="frow">
+        <div class="fg"><label for="f-nome">Nome completo *</label><input id="f-nome" name="nome" type="text" autocomplete="name" placeholder="Seu nome" required></div>
+        <div class="fg"><label for="f-tel">Telefone / WhatsApp *</label><input id="f-tel" name="telefone" type="tel" autocomplete="tel" placeholder="(11) 99999-9999" required></div>
+      </div>
+      <div class="frow">
+        <div class="fg"><label for="f-cidade">Cidade *</label><input id="f-cidade" name="cidade" type="text" placeholder="Ex.: Sorocaba" required></div>
+        <div class="fg"><label for="f-servico">Tipo de serviço</label>
+          <select id="f-servico" name="servico"><option value="">Selecione...</option><option>Projeto arquitetônico</option><option>Projeto elétrico</option><option>Projeto hidráulico</option><option>Gerenciamento de obras</option><option>Design de interiores</option><option>Paisagismo</option><option>Regularização</option><option>Consultoria técnica</option><option>Outro</option></select>
+        </div>
+      </div>
+      <div class="frow">
+        <div class="fg"><label for="f-urgencia">Urgência</label><select id="f-urgencia" name="urgencia"><option value="">Selecione...</option><option>Sem pressa</option><option>Este mês</option><option>Urgente</option></select></div>
+        <div class="fg"><label for="f-origem">Como me encontrou?</label><select id="f-origem" name="origem"><option value="">Selecione...</option><option>Instagram</option><option>Google</option><option>Indicação</option><option>WhatsApp</option><option>Outro</option></select></div>
+      </div>
+      <div class="fg"><label for="f-msg">Mensagem</label><textarea id="f-msg" name="mensagem" placeholder="Descreva seu projeto, prazo e o que você precisa..."></textarea></div>
+      <p class="fhint" id="form-hint"></p>
+      <button type="submit" class="btn-submit">Enviar e abrir o WhatsApp →</button>
+      <p class="flegal">Ao enviar, você abre uma conversa no WhatsApp com os dados preenchidos.</p>
+    </form>
+  </section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="foot-in">
+    <div>
+      <div class="foot-logo"><b>Ronaldo</b> <span>Rocha</span></div>
+      <div class="foot-copy">Engenharia Civil · CREA 5070175755 · © <span id="year"></span></div>
+    </div>
+    <div class="foot-links">
+      <button data-go="home">Início</button><button data-go="projetos">Projetos</button><button data-go="sobre">Sobre</button>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ WHATSAPP FLOAT ============ -->
+<button class="wa" data-wpp="float" aria-label="Falar no WhatsApp" title="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.47-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37s-1.04 1.02-1.04 2.48 1.07 2.88 1.22 3.07c.15.2 2.1 3.2 5.08 4.49.7.3 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.12-.27-.2-.57-.35zM12.05 21.79h-.01a9.87 9.87 0 01-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 01-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 012.89 6.99c0 5.45-4.44 9.88-9.89 9.88z"/></svg>
+</button>
+
+<script>
+/* =========================================================
+   CONFIG
+   ========================================================= */
+/* ── Supabase: salva lead no banco ── */
+var SB_RECEIVE_LEAD="https://kdazwnvhpirofmaysfzs.supabase.co/functions/v1/receive-lead";
+function saveLead(p){
+  fetch(SB_RECEIVE_LEAD,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(p)}).catch(function(){});
+}
+var WHATSAPP = "5511995415612"; // (11) 99541-5612 — confirmar número final antes de publicar
+var WPP_MSG = {
+  hero:"Olá, Ronaldo. Vim pelo site e gostaria de solicitar um orçamento.",
+  geral:"Olá, Ronaldo. Vim pelo site e gostaria de falar sobre um serviço de engenharia.",
+  float:"Olá, Ronaldo. Vim pelo site e gostaria de falar sobre um serviço de engenharia.",
+  arquitetonico:"Olá, Ronaldo. Tenho interesse em um projeto arquitetônico e gostaria de mais informações.",
+  eletrico:"Olá, Ronaldo. Preciso de um projeto elétrico e gostaria de mais informações.",
+  hidraulico:"Olá, Ronaldo. Preciso de um projeto hidráulico e gostaria de mais informações.",
+  gerenciamento:"Olá, Ronaldo. Gostaria de conversar sobre acompanhamento ou gerenciamento de obra.",
+  interiores:"Olá, Ronaldo. Tenho interesse em design de interiores e gostaria de mais informações.",
+  paisagismo:"Olá, Ronaldo. Tenho interesse em paisagismo e gostaria de mais informações.",
+  regularizacao:"Olá, Ronaldo. Preciso de ajuda com regularização/documentação de imóvel.",
+  consultoria:"Olá, Ronaldo. Quero uma consultoria técnica antes de construir ou reformar."
+};
+function abrirWhatsApp(m){ window.open("https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent(m),"_blank"); }
+
+/* ---------- ANALYTICS (GA4/GTM-ready) ---------- */
+window.dataLayer = window.dataLayer || [];
+function getUTMs(){ var p=new URLSearchParams(location.search); return {utm_source:p.get("utm_source")||"",utm_medium:p.get("utm_medium")||"",utm_campaign:p.get("utm_campaign")||""}; }
+function track(name,params){ params=params||{}; var pl=Object.assign({event:name,page_url:location.href},getUTMs(),params); window.dataLayer.push(pl); if(typeof window.gtag==="function") gtag("event",name,params); if(window.console&&console.debug) console.debug("[track]",name,pl); }
+
+/* =========================================================
+   DADOS: serviços e projetos
+   ========================================================= */
+var ICON={
+  arquitetonico:'<path d="M3 21h18M3 10l9-7 9 7M5 21V10M19 21V10M9 21v-6h6v6"/>',
+  eletrico:'<path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>',
+  hidraulico:'<path d="M12 2C6 2 3 7 3 12c0 3 1.5 5.5 4 7v3h10v-3c2.5-1.5 4-4 4-7 0-5-3-10-9-10z"/>',
+  gerenciamento:'<path d="M2 20h20"/><path d="M12 3a7 7 0 00-7 7v3h14v-3a7 7 0 00-7-7z"/>',
+  interiores:'<path d="M20 9V7a2 2 0 00-2-2H6a2 2 0 00-2 2v2"/><path d="M2 11h20v8a2 2 0 01-2 2H4a2 2 0 01-2-2v-8z"/>',
+  paisagismo:'<path d="M12 22V12M12 12C12 7 7 4 3 6M12 12C12 7 17 4 21 6"/>',
+  regularizacao:'<path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/>',
+  consultoria:'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 14l2 2 4-4"/>'
+};
+var servicos=[
+  {n:"01",key:"arquitetonico",t:"Projeto Arquitetônico",d:"Plantas, fachadas e documentação para construir, reformar ou planejar melhor o imóvel."},
+  {n:"02",key:"eletrico",t:"Projeto Elétrico",d:"Instalações elétricas dimensionadas com segurança e conforme as normas técnicas."},
+  {n:"03",key:"hidraulico",t:"Projeto Hidráulico",d:"Água, esgoto e instalações hidráulicas com eficiência e durabilidade."},
+  {n:"04",key:"gerenciamento",t:"Gerenciamento de Obras",d:"Acompanhamento técnico de execução, prazo e qualidade do início ao fim."},
+  {n:"05",key:"interiores",t:"Design de Interiores",d:"Ambientes funcionais e bem planejados, do conceito aos materiais."},
+  {n:"06",key:"paisagismo",t:"Paisagismo",d:"Áreas externas, jardins e integração com o imóvel."},
+  {n:"07",key:"regularizacao",t:"Regularização",d:"Documentação, aprovação e situação do imóvel resolvidas com apoio técnico."},
+  {n:"08",key:"consultoria",t:"Consultoria Técnica",d:"Avaliação antes de construir, reformar ou decidir sobre uma obra."}
+];
+/* PROJETOS — provisórios (trocar fotos/títulos depois). cat: residencial|comercial|reforma */
+var IMG="?w=800&q=80&auto=format";
+var projetos=[
+  {cat:"residencial",catlabel:"Residencial",t:"Casa Pátio",cap:"Residência térrea com integração interna e luz natural.",img:"https://images.unsplash.com/photo-1600585154340-be6161a56a0c"+IMG,wide:true},
+  {cat:"comercial",catlabel:"Comercial",t:"Galpão Logístico",cap:"Estrutura comercial com foco em fluxo e segurança.",img:"https://images.unsplash.com/photo-1486406146926-c627a92ad1ab"+IMG},
+  {cat:"reforma",catlabel:"Reforma",t:"Reforma Apartamento",cap:"Reforma completa com reorganização de planta.",img:"https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3"+IMG},
+  {cat:"residencial",catlabel:"Residencial",t:"Sobrado Moderno",cap:"Projeto residencial de dois pavimentos.",img:"https://images.unsplash.com/photo-1512917774080-9991f1c4c750"+IMG},
+  {cat:"comercial",catlabel:"Comercial",t:"Loja Conceito",cap:"Espaço comercial com projeto e execução acompanhados.",img:"https://images.unsplash.com/photo-1497366811353-6870744d04b2"+IMG,wide:true},
+  {cat:"reforma",catlabel:"Regularização",t:"Regularização Predial",cap:"Adequação e documentação técnica do imóvel.",img:"https://images.unsplash.com/photo-1503387762-592deb58ef4e"+IMG},
+  {cat:"residencial",catlabel:"Residencial",t:"Casa de Campo",cap:"Projeto integrado à paisagem e à topografia.",img:"https://images.unsplash.com/photo-1416331108676-a22ccb276e35"+IMG},
+  {cat:"comercial",catlabel:"Comercial",t:"Edifício Corporativo",cap:"Acompanhamento técnico de obra comercial.",img:"https://images.unsplash.com/photo-1487958449943-2429e8be8625"+IMG},
+  {cat:"reforma",catlabel:"Reforma",t:"Retrofit Comercial",cap:"Modernização de estrutura existente.",img:"https://images.unsplash.com/photo-1581094794329-c8112a89af12"+IMG}
+];
+
+/* ---------- render serviços (lista editorial) ---------- */
+(function(){
+  var box=document.getElementById("svc-list");
+  box.innerHTML=servicos.map(function(s){
+    return '<div class="svc-row" data-svc="'+s.key+'" data-name="'+s.t+'">'
+      +'<span class="sn disp">'+s.n+'</span>'
+      +'<span class="st disp">'+s.t+'<span class="sd"> — '+s.d+'</span></span>'
+      +'<span class="sgo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>'
+      +'</div>';
+  }).join("");
+  box.querySelectorAll(".svc-row").forEach(function(r){
+    r.addEventListener("click",function(){ var k=r.getAttribute("data-svc"); track("click_service",{service_name:r.getAttribute("data-name")}); abrirWhatsApp(WPP_MSG[k]||WPP_MSG.geral); });
+  });
+})();
+
+/* ---------- render projetos em destaque (home) ---------- */
+function projCard(p){
+  return '<button class="pcard'+(p.wide?' wide':'')+'" data-go="projetos">'
+    +'<div class="ph"><img src="'+p.img+'" alt="'+p.t+' — '+p.catlabel+'" loading="lazy"></div>'
+    +'<div class="pcat">'+p.catlabel+'</div><h3 class="disp">'+p.t+'</h3>'
+    +'<div class="pcap">'+p.cap+'</div></button>';
+}
+document.getElementById("feat-grid").innerHTML = projetos.slice(0,3).map(projCard).join("");
+
+/* ---------- render grade de projetos (página) + filtros ---------- */
+var cats=[["todos","Todos"],["residencial","Residencial"],["comercial","Comercial"],["reforma","Reforma & Regularização"]];
+document.getElementById("filters").innerHTML=cats.map(function(c,i){return '<button class="filter'+(i===0?' active':'')+'" data-filter="'+c[0]+'">'+c[1]+'</button>';}).join("");
+function renderProjetos(filter){
+  var list = filter==="todos"?projetos:projetos.filter(function(p){return p.cat===filter;});
+  document.getElementById("proj-grid").innerHTML=list.map(projCard).join("");
+  bindGo(document.getElementById("proj-grid"));
+}
+renderProjetos("todos");
+document.getElementById("filters").querySelectorAll(".filter").forEach(function(b){
+  b.addEventListener("click",function(){
+    document.querySelectorAll("#filters .filter").forEach(function(x){x.classList.remove("active");});
+    b.classList.add("active"); renderProjetos(b.getAttribute("data-filter"));
+  });
+});
+
+/* =========================================================
+   ROTEAMENTO (3 páginas via hash)
+   ========================================================= */
+var pages={home:"page-home",projetos:"page-projetos",sobre:"page-sobre"};
+function activate(name){
+  if(!pages[name]) name="home";
+  Object.keys(pages).forEach(function(k){ document.getElementById(pages[k]).classList.toggle("active",k===name); });
+  document.querySelectorAll(".navlink").forEach(function(l){ l.classList.toggle("active", l.getAttribute("data-go")===name); });
+  window.scrollTo(0,0);
+  revealIn(document.getElementById(pages[name]));
+  track("page_view",{page:name});
+  if(name==="sobre") tryBuildMap();
+  document.getElementById("navlinks").classList.remove("open");
+  onScrollNav();
+}
+function go(name){ if(location.hash!=="#/"+name) location.hash="#/"+name; else activate(name); }
+function bindGo(scope){ (scope||document).querySelectorAll("[data-go]").forEach(function(el){ if(el._bound)return; el._bound=true; el.addEventListener("click",function(e){ e.preventDefault(); go(el.getAttribute("data-go")); }); }); }
+bindGo(document);
+window.addEventListener("hashchange",function(){ activate((location.hash||"").replace("#/","")||"home"); });
+
+/* =========================================================
+   WHATSAPP / CONTATO / FORM
+   ========================================================= */
+document.querySelectorAll("[data-wpp]").forEach(function(el){
+  el.addEventListener("click",function(e){ e.preventDefault(); var ctx=el.getAttribute("data-wpp");
+    if(ctx==="float") track("click_whatsapp_float",{}); else track("click_whatsapp_hero",{context:ctx});
+    abrirWhatsApp(WPP_MSG[ctx]||WPP_MSG.geral); });
+});
+document.querySelectorAll("[data-contact]").forEach(function(el){
+  el.addEventListener("click",function(){ var t=el.getAttribute("data-contact");
+    if(t==="instagram") track("click_instagram",{}); else track("click_contact_method",{method:t});
+    if(t==="whatsapp") abrirWhatsApp(WPP_MSG.geral); });
+});
+(function(){
+  var form=document.getElementById("lead-form"); if(!form) return;
+  var hint=document.getElementById("form-hint");
+  form.addEventListener("submit",function(e){
+    e.preventDefault();
+    var g=function(n){var el=form.querySelector('[name="'+n+'"]');return el?el.value.trim():"";};
+    var d={nome:g("nome"),telefone:g("telefone"),cidade:g("cidade"),servico:g("servico"),urgencia:g("urgencia"),origem:g("origem"),mensagem:g("mensagem")};
+    form.querySelectorAll(".fg").forEach(function(x){x.classList.remove("invalid");});
+    var falta=[];
+    [["nome","Nome"],["telefone","Telefone"],["cidade","Cidade"]].forEach(function(f){ if(!d[f[0]]){ falta.push(f[1]); var el=form.querySelector('[name="'+f[0]+'"]'); if(el) el.closest(".fg").classList.add("invalid"); } });
+    if(falta.length){ hint.textContent="Preencha: "+falta.join(", ")+"."; return; }
+    hint.textContent="";
+    var utm=getUTMs(); var origem=d.origem||utm.utm_source||"";
+    track("submit_lead_form",{nome:d.nome,telefone:d.telefone,cidade:d.cidade,service_name:d.servico,urgencia:d.urgencia,origem:origem,mensagem:d.mensagem});
+    var m="Olá, Ronaldo. Vim pelo site e gostaria de solicitar um orçamento.\n";
+    m+="Nome: "+d.nome+"\nTelefone: "+d.telefone+"\nCidade: "+d.cidade+"\n";
+    if(d.servico) m+="Serviço: "+d.servico+"\n";
+    if(d.urgencia) m+="Urgência: "+d.urgencia+"\n";
+    if(origem) m+="Origem: "+origem+"\n";
+    if(d.mensagem) m+="Mensagem: "+d.mensagem;
+    // salva lead no Supabase (fogo-e-esquece)
+    saveLead({nome:d.nome,telefone:d.telefone,cidade:d.cidade,servico:d.servico||null,
+      urgencia:d.urgencia||null,origem:origem||null,mensagem:d.mensagem||null,
+      via:"Formulário",utm_source:utm.utm_source,utm_medium:utm.utm_medium,
+      utm_campaign:utm.utm_campaign,page_url:location.href});
+    abrirWhatsApp(m.trim());
+  });
+})();
+/* view da seção contato */
+(function(){ var c=document.getElementById("contato-sec"); if(!c)return;
+  var o=new IntersectionObserver(function(es){es.forEach(function(en){ if(en.isIntersecting){track("view_contact_section",{});o.disconnect();} });},{threshold:.3}); o.observe(c);
+})();
+
+/* =========================================================
+   NAV mobile + scroll state
+   ========================================================= */
+var nav=document.getElementById("nav");
+function onScrollNav(){ nav.classList.toggle("solid", window.scrollY>30 || !document.getElementById("page-home").classList.contains("active")); }
+window.addEventListener("scroll",onScrollNav);
+document.getElementById("burger").addEventListener("click",function(){ document.getElementById("navlinks").classList.toggle("open"); });
+
+/* =========================================================
+   REVEAL
+   ========================================================= */
+var io=new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target);} }); },{threshold:.12,rootMargin:"0px 0px -40px 0px"});
+function observeRv(scope){ (scope||document).querySelectorAll(".rv:not(.in)").forEach(function(el){ io.observe(el); }); }
+function revealIn(page){ // garante reveal do que já está visível ao trocar de página
+  observeRv(page);
+  setTimeout(function(){ page.querySelectorAll(".rv:not(.in)").forEach(function(el,i){ var r=el.getBoundingClientRect(); if(r.top < window.innerHeight*0.96){ setTimeout(function(){el.classList.add("in");}, i*55); } }); },40);
+}
+
+/* =========================================================
+   MAPA GOOGLE (lazy — só quando a página Sobre abre)
+   ========================================================= */
+var regioes={sorocaba:{lat:-23.5015,lng:-47.4526,zoom:11,radius:30000,label:"Sorocaba"},campinas:{lat:-22.9056,lng:-47.0608,zoom:11,radius:35000,label:"Campinas"},piracicaba:{lat:-22.7253,lng:-47.6492,zoom:11,radius:25000,label:"Piracicaba"}};
+var CENTRO={lat:-22.9,lng:-47.45},ZOOM=9;
+var map,circuloGeral,circulosFoco={},marcadores={},regiaoAtiva=null,gmapsReady=false,mapBuilt=false;
+var ESTILO=[{elementType:"geometry",stylers:[{color:"#13294c"}]},{elementType:"labels.text.stroke",stylers:[{color:"#0d1f3c"}]},{elementType:"labels.text.fill",stylers:[{color:"#8fa8c8"}]},{featureType:"administrative",elementType:"geometry.stroke",stylers:[{color:"#3a5278"}]},{featureType:"poi",stylers:[{visibility:"off"}]},{featureType:"road",elementType:"geometry",stylers:[{color:"#1f3a63"}]},{featureType:"road.highway",elementType:"geometry",stylers:[{color:"#2d4d7a"}]},{featureType:"transit",stylers:[{visibility:"off"}]},{featureType:"water",elementType:"geometry",stylers:[{color:"#0a1830"}]}];
+function initMap(){ gmapsReady=true; tryBuildMap(); }
+window.initMap=initMap;
+function tryBuildMap(){ if(gmapsReady && !mapBuilt && document.getElementById("page-sobre").classList.contains("active")){ buildMap(); mapBuilt=true; } }
+function buildMap(){
+  var node=document.getElementById("google-map"); if(!node||typeof google==="undefined")return;
+  map=new google.maps.Map(node,{center:CENTRO,zoom:ZOOM,styles:ESTILO,disableDefaultUI:true,zoomControl:true,gestureHandling:"cooperative"});
+  circuloGeral=new google.maps.Circle({map:map,center:CENTRO,radius:100000,strokeColor:"#c8a96e",strokeOpacity:.6,strokeWeight:2,fillColor:"#1a4993",fillOpacity:.12});
+  Object.keys(regioes).forEach(function(key){ var r=regioes[key];
+    circulosFoco[key]=new google.maps.Circle({map:map,center:{lat:r.lat,lng:r.lng},radius:r.radius,strokeColor:"#c8a96e",strokeOpacity:0,strokeWeight:2.5,fillColor:"#c8a96e",fillOpacity:0,zIndex:2});
+    marcadores[key]=new google.maps.Marker({map:map,position:{lat:r.lat,lng:r.lng},title:r.label,icon:{path:google.maps.SymbolPath.CIRCLE,scale:9,fillColor:"#c8a96e",fillOpacity:1,strokeColor:"#fff",strokeWeight:2},label:{text:r.label,color:"#eaf1fb",fontSize:"11px",fontFamily:"Manrope, sans-serif",fontWeight:"600"},zIndex:3});
+    marcadores[key].addListener("click",function(){ track("click_region",{region_name:key}); focusRegiao(key); });
+  });
+}
+function focusRegiao(key){
+  if(!map)return; if(regiaoAtiva===key){resetarMapa();return;}
+  regiaoAtiva=key; var r=regioes[key];
+  map.panTo({lat:r.lat,lng:r.lng}); setTimeout(function(){map.setZoom(r.zoom);},300);
+  circuloGeral.setOptions({strokeOpacity:.12,fillOpacity:.03});
+  Object.keys(circulosFoco).forEach(function(k){ circulosFoco[k].setOptions(k===key?{strokeOpacity:.9,fillOpacity:.16}:{strokeOpacity:0,fillOpacity:0}); });
+  Object.keys(marcadores).forEach(function(k){ marcadores[k].setIcon({path:google.maps.SymbolPath.CIRCLE,scale:k===key?13:7,fillColor:k===key?"#c8a96e":"#3a5a80",fillOpacity:1,strokeColor:"#fff",strokeWeight:k===key?3:1.5}); });
+  var ordem=["sorocaba","campinas","piracicaba"];
+  document.querySelectorAll(".mapcard").forEach(function(c,i){ c.classList.toggle("ativo",ordem[i]===key); });
+}
+window.focusRegiao=focusRegiao;
+function resetarMapa(){ regiaoAtiva=null; map.panTo(CENTRO); setTimeout(function(){map.setZoom(ZOOM);},300);
+  circuloGeral.setOptions({strokeOpacity:.6,fillOpacity:.12});
+  Object.keys(circulosFoco).forEach(function(k){circulosFoco[k].setOptions({strokeOpacity:0,fillOpacity:0});});
+  Object.keys(marcadores).forEach(function(k){marcadores[k].setIcon({path:google.maps.SymbolPath.CIRCLE,scale:9,fillColor:"#c8a96e",fillOpacity:1,strokeColor:"#fff",strokeWeight:2});});
+  document.querySelectorAll(".mapcard").forEach(function(c){c.classList.remove("ativo");});
+}
+document.querySelectorAll(".mapcard[data-regiao]").forEach(function(card){ card.addEventListener("click",function(){ var k=card.getAttribute("data-regiao"); track("click_region",{region_name:k}); focusRegiao(k); }); });
+
+/* =========================================================
+   INIT
+   ========================================================= */
+document.getElementById("year").textContent=new Date().getFullYear();
+activate((location.hash||"").replace("#/","")||"home");
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbkxH6eOIgVMxotFE7PN-66w2hSHvet7s&callback=initMap" async defer></script>
+</body>
+</html>

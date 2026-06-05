@@ -1,0 +1,238 @@
+:root {
+  /* Colors */
+  --bg:        #05060a;
+  --surface:   #09090f;
+  --surface2:  #0d0e16;
+  --surface3:  #11121c;
+  --border:    rgba(255, 255, 255, 0.055);
+  --border2:   rgba(255, 255, 255, 0.10);
+  --border3:   rgba(255, 255, 255, 0.16);
+
+  --gold:      #c9a96e;
+  --gold2:     #e2c48a;
+  --gold-dim:  rgba(201, 169, 110, 0.07);
+  --gold-glow: rgba(201, 169, 110, 0.18);
+
+  --white:     #f2efe8;
+  --muted:     rgba(242, 239, 232, 0.40);
+  --muted2:    rgba(242, 239, 232, 0.18);
+  --muted3:    rgba(242, 239, 232, 0.07);
+
+  /* Semantic */
+  --ink:       #07060a;          /* text on gold/light surfaces */
+  --success:   #4ade80;          /* feature check */
+  --success-bg: rgba(74, 222, 128, 0.10);
+  --success-bd: rgba(74, 222, 128, 0.22);
+  --whatsapp:  #25d366;
+  --whatsapp-glow: rgba(37, 211, 102, 0.25);
+
+  /* Typography */
+  --font-display: 'Syne', sans-serif;
+  --font-body:    'DM Sans', sans-serif;
+  --font-mono:    'DM Mono', monospace;
+  /* números: limpo, linear e premium (dígitos de largura igual) */
+  --font-num:     'DM Sans', sans-serif;
+
+  /* Spacing scale */
+  --s1:  0.5rem;
+  --s2:  1rem;
+  --s3:  1.5rem;
+  --s4:  2rem;
+  --s5:  3rem;
+  --s6:  4.5rem;
+  --s7:  6rem;
+  --s8:  8rem;
+  --s9:  10rem;
+
+  /* Layout */
+  --max-w:     1200px;
+  --pad-x:     clamp(1.5rem, 5vw, 4rem);
+
+  /* Radius */
+  --r-sm:  0.5rem;
+  --r-md:  0.875rem;
+  --r-lg:  1.25rem;
+  --r-xl:  2rem;
+  --r-full: 999px;
+
+  /* Transitions */
+  --ease-out:   cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --t-fast: 0.2s;
+  --t-med:  0.4s;
+  --t-slow: 0.7s;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--white);
+  font-size: 1rem;
+  line-height: 1.6;
+  cursor: none;
+}
+
+/* Custom cursor */
+#cursor {
+  position: fixed;
+  width: 7px;
+  height: 7px;
+  background: var(--gold);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.08s;
+  mix-blend-mode: normal;
+}
+
+#cursor-ring {
+  position: fixed;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(201, 169, 110, 0.35);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width 0.25s var(--ease-out),
+              height 0.25s var(--ease-out),
+              border-color 0.25s,
+              opacity 0.25s;
+}
+
+body:has(a:hover, button:hover, [data-cursor]:hover) #cursor-ring {
+  width: 50px;
+  height: 50px;
+  border-color: rgba(201, 169, 110, 0.55);
+}
+
+/* ============================================================
+   Sistema de container unificado.
+   Toda seção compartilha a MESMA calha lateral: o conteúdo
+   nunca passa de --max-w (1200px) e a margem lateral é --pad-x.
+   .section  → conteúdo direto na seção.
+   .section-full + .inner → quando a seção precisa de fundo/bordas
+   full-bleed mas o conteúdo segue a mesma calha.
+   Ambos resultam no MESMO eixo de alinhamento.
+   ============================================================ */
+.section {
+  /* cada seção respira como uma "ilha": tela cheia, conteúdo
+     centralizado verticalmente, espaço preto generoso em volta */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(9rem, 22vh, 16rem) var(--pad-x);
+  max-width: calc(var(--max-w) + 2 * var(--pad-x));
+  margin: 0 auto;
+}
+
+.section-full {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(9rem, 22vh, 16rem) var(--pad-x);
+}
+
+.section-full > .inner,
+.inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Section label */
+.s-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--gold);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: var(--s3);
+}
+
+.s-label::before {
+  content: '';
+  width: 26px;
+  height: 1px;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: var(--white);
+}
+
+h2 {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 700;
+}
+
+h2 em {
+  font-style: normal;
+  color: var(--gold);
+}
+
+/* Hero: elementos nascem invisíveis para evitar "flash" no 1º frame
+   antes do GSAP rodar (o GSAP os revela na animação de entrada). */
+#h-pre, #h-title, #h-sub, #h-actions, #h-hint, #h-trust {
+  opacity: 0;
+}
+
+/* Reveal animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.9s var(--ease-out),
+              transform 0.9s var(--ease-out);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal.d1 { transition-delay: 0.08s; }
+.reveal.d2 { transition-delay: 0.16s; }
+.reveal.d3 { transition-delay: 0.24s; }
+.reveal.d4 { transition-delay: 0.32s; }
+
+/* Divider */
+.divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border2) 30%, var(--border2) 70%, transparent);
+}
+
+/* Grain overlay */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1000;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.022;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: rgba(201,169,110,0.25); border-radius: 2px; }
+
+@media (max-width: 768px) {
+  body { cursor: auto; }
+  #cursor, #cursor-ring { display: none; }
+  .section { padding: var(--s6) var(--pad-x); }
+  .section-full { padding: var(--s6) var(--pad-x); }
+}

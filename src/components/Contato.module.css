@@ -1,0 +1,142 @@
+/* ============================================================
+   Contato — a margem horizontal vem da classe global .section.
+   ============================================================ */
+
+.wrap {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2.5rem, 6vw, 6rem);
+  align-items: center;
+  padding: clamp(2rem, 6vh, 4rem) 0;
+  width: 100%;
+}
+
+.left { display: flex; flex-direction: column; }
+
+.desc {
+  font-size: clamp(1rem, 1.4vw, 1.12rem);
+  color: var(--muted);
+  font-weight: 300;
+  line-height: 1.95;
+  margin-top: 1.6rem;
+}
+
+/* meta row (resposta / onde / orçamento) */
+.meta {
+  display: flex;
+  gap: 2.4rem;
+  margin-top: 3rem;
+  padding-top: 2.2rem;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+.metaItem { display: flex; flex-direction: column; gap: 0.3rem; }
+.metaK {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted2);
+}
+.metaV {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--white);
+  letter-spacing: -0.01em;
+}
+
+.linksCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 1.4rem 1.6rem;
+  text-decoration: none;
+  cursor: none;
+  transition: border-color var(--t-med), transform var(--t-med), background var(--t-med);
+}
+.link:hover {
+  border-color: rgba(201,169,110,0.28);
+  transform: translateY(-3px);
+  background: var(--surface2);
+}
+
+.linkIcon {
+  width: 46px; height: 46px;
+  flex-shrink: 0;
+  background: var(--gold-dim);
+  border: 1px solid rgba(201,169,110,0.18);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold);
+}
+.linkIcon svg { width: 22px; height: 22px; }
+
+.linkText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex: 1;
+}
+.linkLabel {
+  font-family: var(--font-display);
+  font-size: 1rem; font-weight: 600;
+  color: var(--white); letter-spacing: -0.01em;
+}
+.linkValue {
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-weight: 300;
+}
+
+.arrow {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--muted2);
+  transition: color var(--t-med), transform var(--t-med);
+}
+.link:hover .arrow {
+  color: var(--gold);
+  transform: translateX(4px);
+}
+
+/* status note */
+.note {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 0.6rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-weight: 300;
+}
+.noteDot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--success);
+  box-shadow: 0 0 0 0 rgba(74,222,128,0.5);
+  animation: notebeat 2s infinite;
+  flex-shrink: 0;
+}
+@keyframes notebeat {
+  0%   { box-shadow: 0 0 0 0 rgba(74,222,128,0.5); }
+  70%  { box-shadow: 0 0 0 6px rgba(74,222,128,0); }
+  100% { box-shadow: 0 0 0 0 rgba(74,222,128,0); }
+}
+
+@media (max-width: 860px) {
+  .layout { grid-template-columns: 1fr; gap: 2.5rem; }
+}
