@@ -12,6 +12,7 @@ const projects = [
     tags: ['Site', 'Analytics', 'Dashboard'],
     live: true,
     thumb: null,
+    result: { num: '+200%', label: 'leads no WhatsApp' },
   },
   {
     id: 2,
@@ -22,6 +23,7 @@ const projects = [
     tags: ['Cardápio', 'WhatsApp', 'Mobile'],
     live: true,
     thumb: null,
+    result: { num: '+250%', label: 'de faturamento' },
   },
   {
     id: 3,
@@ -137,6 +139,12 @@ export default function Portfolio() {
                   </div>
                   <h3 className={styles.name}>{p.name}</h3>
                   <p className={styles.desc}>{p.desc}</p>
+                  {p.result && (
+                    <div className={styles.result}>
+                      <span className={styles.resultNum}>{p.result.num}</span>
+                      <span className={styles.resultLabel}>{p.result.label}</span>
+                    </div>
+                  )}
                   {p.tags.length > 0 && (
                     <div className={styles.tags}>
                       {p.tags.map(t => <span key={t} className={styles.tag}>{t}</span>)}

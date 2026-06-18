@@ -1,13 +1,16 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, lazy, Suspense } from 'react'
 import Cursor      from './components/Cursor'
 import Splash      from './components/Splash'
 import Nav         from './components/Nav'
 import Home        from './components/Home'
-import Portfolio   from './components/Portfolio'
-import Paletas     from './components/Paletas'
-import Precos      from './components/Precos'
 import Footer      from './components/Footer'
 import { useLenis } from './hooks/useLenis'
+
+// abas secundárias carregadas sob demanda (code splitting): não pesam
+// no carregamento inicial da home.
+const Portfolio = lazy(() => import('./components/Portfolio'))
+const Paletas   = lazy(() => import('./components/Paletas'))
+const Precos    = lazy(() => import('./components/Precos'))
 
 // mapeia cada aba para uma URL real (e vice-versa) para que o Google
 // indexe cada página e os botões voltar/avançar do navegador funcionem.
@@ -47,9 +50,11 @@ export default function App() {
       <Nav tab={tab} setTab={changeTab} />
       <main>
         {tab === 'home'      && !intro && <Home key="home" />}
-        {tab === 'portfolio' && <Portfolio key="portfolio" />}
-        {tab === 'paletas'   && <Paletas   key="paletas"   />}
-        {tab === 'precos'    && <Precos    key="precos"    />}
+        <Suspense fallback={null}>
+          {tab === 'portfolio' && <Portfolio key="portfolio" />}
+          {tab === 'paletas'   && <Paletas   key="paletas"   />}
+          {tab === 'precos'    && <Precos    key="precos"    />}
+        </Suspense>
       </main>
       <Footer />
     </>

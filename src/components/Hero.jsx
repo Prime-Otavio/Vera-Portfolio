@@ -1,6 +1,5 @@
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
-import * as THREE from 'three'
 import styles from './Hero.module.css'
 
 export default function Hero() {
@@ -9,99 +8,109 @@ export default function Hero() {
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas) return
-    const W = window.innerWidth, H = window.innerHeight
-    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true })
-    renderer.setPixelRatio(Math.min(devicePixelRatio, 2))
-    renderer.setSize(W, H)
-    const scene  = new THREE.Scene()
-    const camera = new THREE.PerspectiveCamera(55, W / H, 0.1, 600)
-    camera.position.set(0, 0, 10)
+    let cleanup = () => {}
+    let cancelled = false
 
-    const N   = window.innerWidth < 768 ? 500 : 2800
-    const geo = new THREE.BufferGeometry()
-    const pos = new Float32Array(N * 3)
-    const col = new Float32Array(N * 3)
+    // three.js é carregado sob demanda para sair do bundle principal
+    import('three').then((THREE) => {
+      if (cancelled || !canvasRef.current) return
+      const W = window.innerWidth, H = window.innerHeight
+      const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true })
+      renderer.setPixelRatio(Math.min(devicePixelRatio, 2))
+      renderer.setSize(W, H)
+      const scene  = new THREE.Scene()
+      const camera = new THREE.PerspectiveCamera(55, W / H, 0.1, 600)
+      camera.position.set(0, 0, 10)
 
-    for (let i = 0; i < N; i++) {
-      pos[i*3]   = (Math.random()-0.5)*40
-      pos[i*3+1] = (Math.random()-0.5)*24
-      pos[i*3+2] = (Math.random()-0.5)*20
-      if (Math.random() > 0.72) {
-        col[i*3]   = 0.75+Math.random()*0.15
-        col[i*3+1] = 0.60+Math.random()*0.12
-        col[i*3+2] = 0.22+Math.random()*0.12
-      } else {
-        const v = 0.05+Math.random()*0.09
-        col[i*3]=v; col[i*3+1]=v; col[i*3+2]=v*0.75
+      const N   = window.innerWidth < 768 ? 500 : 2800
+      const geo = new THREE.BufferGeometry()
+      const pos = new Float32Array(N * 3)
+      const col = new Float32Array(N * 3)
+
+      for (let i = 0; i < N; i++) {
+        pos[i*3]   = (Math.random()-0.5)*40
+        pos[i*3+1] = (Math.random()-0.5)*24
+        pos[i*3+2] = (Math.random()-0.5)*20
+        if (Math.random() > 0.72) {
+          col[i*3]   = 0.75+Math.random()*0.15
+          col[i*3+1] = 0.60+Math.random()*0.12
+          col[i*3+2] = 0.22+Math.random()*0.12
+        } else {
+          const v = 0.05+Math.random()*0.09
+          col[i*3]=v; col[i*3+1]=v; col[i*3+2]=v*0.75
+        }
       }
-    }
-    geo.setAttribute('position', new THREE.BufferAttribute(pos, 3))
-    geo.setAttribute('color',    new THREE.BufferAttribute(col, 3))
-    const mat = new THREE.PointsMaterial({ size: 0.04, vertexColors: true, transparent: true, opacity: 0.85 })
-    const particles = new THREE.Points(geo, mat)
-    scene.add(particles)
+      geo.setAttribute('position', new THREE.BufferAttribute(pos, 3))
+      geo.setAttribute('color',    new THREE.BufferAttribute(col, 3))
+      const mat = new THREE.PointsMaterial({ size: 0.04, vertexColors: true, transparent: true, opacity: 0.85 })
+      const particles = new THREE.Points(geo, mat)
+      scene.add(particles)
 
-    const shapes = []
-    const configs = [
-      { size:1.1, color:0xc9a96e, opacity:0.18, x:-5,   y:1.5 },
-      { size:0.75,color:0x1e2230, opacity:0.35, x:5.5,  y:-1  },
-      { size:0.55,color:0xc9a96e, opacity:0.10, x:0,    y:-3  },
-    ]
-    configs.forEach(({ size, color, opacity, x, y }) => {
-      const g = new THREE.IcosahedronGeometry(size, 1)
-      const m = new THREE.MeshBasicMaterial({ color, wireframe:true, transparent:true, opacity })
-      const mesh = new THREE.Mesh(g, m)
-      mesh.position.set(x, y, -2)
-      mesh.userData = { sp:0.2+Math.random()*0.3, ph:Math.random()*Math.PI*2, oy:y }
-      scene.add(mesh); shapes.push(mesh)
+      const shapes = []
+      const configs = [
+        { size:1.1, color:0xc9a96e, opacity:0.18, x:-5,   y:1.5 },
+        { size:0.75,color:0x1e2230, opacity:0.35, x:5.5,  y:-1  },
+        { size:0.55,color:0xc9a96e, opacity:0.10, x:0,    y:-3  },
+      ]
+      configs.forEach(({ size, color, opacity, x, y }) => {
+        const g = new THREE.IcosahedronGeometry(size, 1)
+        const m = new THREE.MeshBasicMaterial({ color, wireframe:true, transparent:true, opacity })
+        const mesh = new THREE.Mesh(g, m)
+        mesh.position.set(x, y, -2)
+        mesh.userData = { sp:0.2+Math.random()*0.3, ph:Math.random()*Math.PI*2, oy:y }
+        scene.add(mesh); shapes.push(mesh)
+      })
+
+      const lmat = new THREE.LineBasicMaterial({ color:0x181c2a, transparent:true, opacity:0.35 })
+      for (let i = 0; i < 14; i++) {
+        const sx=(Math.random()-0.5)*28, sy=(Math.random()-0.5)*16
+        const pts=[new THREE.Vector3(sx,sy,Math.random()*2-1), new THREE.Vector3(sx+(Math.random()-0.5)*12,sy+(Math.random()-0.5)*7,Math.random()*2-1)]
+        scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), lmat))
+      }
+
+      let t=0, mox=0, moy=0
+      const posArr = geo.attributes.position.array
+      const onMouseMove = (e) => {
+        mox=(e.clientX/innerWidth-0.5)*2
+        moy=-(e.clientY/innerHeight-0.5)*2
+      }
+      window.addEventListener('mousemove', onMouseMove, { passive: true })
+
+      let animId
+      const animate = () => {
+        animId=requestAnimationFrame(animate); t+=0.005
+        geo.attributes.position.needsUpdate=true
+        for (let i=0;i<N;i++) {
+          posArr[i*3+1]+=0.0015
+          if (posArr[i*3+1]>12) posArr[i*3+1]=-12
+        }
+        camera.position.x+=(mox*1.8-camera.position.x)*0.03
+        camera.position.y+=(moy*1.1-camera.position.y)*0.03
+        camera.lookAt(0,0,0)
+        shapes.forEach(s=>{
+          s.rotation.x+=s.userData.sp*0.007
+          s.rotation.y+=s.userData.sp*0.005
+          s.position.y=s.userData.oy+Math.sin(t*s.userData.sp+s.userData.ph)*1.2
+        })
+        renderer.render(scene, camera)
+      }
+      animate()
+
+      const onResize = () => {
+        const W2=innerWidth,H2=innerHeight
+        camera.aspect=W2/H2; camera.updateProjectionMatrix(); renderer.setSize(W2,H2)
+      }
+      window.addEventListener('resize', onResize)
+
+      cleanup = () => {
+        cancelAnimationFrame(animId)
+        window.removeEventListener('mousemove', onMouseMove)
+        window.removeEventListener('resize', onResize)
+        renderer.dispose()
+      }
     })
 
-    const lmat = new THREE.LineBasicMaterial({ color:0x181c2a, transparent:true, opacity:0.35 })
-    for (let i = 0; i < 14; i++) {
-      const sx=(Math.random()-0.5)*28, sy=(Math.random()-0.5)*16
-      const pts=[new THREE.Vector3(sx,sy,Math.random()*2-1), new THREE.Vector3(sx+(Math.random()-0.5)*12,sy+(Math.random()-0.5)*7,Math.random()*2-1)]
-      scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), lmat))
-    }
-
-    let t=0, mox=0, moy=0
-    const posArr = geo.attributes.position.array
-    const onMouseMove = (e) => {
-      mox=(e.clientX/innerWidth-0.5)*2
-      moy=-(e.clientY/innerHeight-0.5)*2
-    }
-    window.addEventListener('mousemove', onMouseMove)
-
-    let animId
-    const animate = () => {
-      animId=requestAnimationFrame(animate); t+=0.005
-      geo.attributes.position.needsUpdate=true
-      for (let i=0;i<N;i++) {
-        posArr[i*3+1]+=0.0015
-        if (posArr[i*3+1]>12) posArr[i*3+1]=-12
-      }
-      camera.position.x+=(mox*1.8-camera.position.x)*0.03
-      camera.position.y+=(moy*1.1-camera.position.y)*0.03
-      camera.lookAt(0,0,0)
-      shapes.forEach(s=>{
-        s.rotation.x+=s.userData.sp*0.007
-        s.rotation.y+=s.userData.sp*0.005
-        s.position.y=s.userData.oy+Math.sin(t*s.userData.sp+s.userData.ph)*1.2
-      })
-      renderer.render(scene, camera)
-    }
-    animate()
-
-    const onResize = () => {
-      const W2=innerWidth,H2=innerHeight
-      camera.aspect=W2/H2; camera.updateProjectionMatrix(); renderer.setSize(W2,H2)
-    }
-    window.addEventListener('resize', onResize)
-    return () => {
-      cancelAnimationFrame(animId)
-      window.removeEventListener('mousemove', onMouseMove)
-      window.removeEventListener('resize', onResize)
-      renderer.dispose()
-    }
+    return () => { cancelled = true; cleanup() }
   }, [])
 
   useEffect(() => {
