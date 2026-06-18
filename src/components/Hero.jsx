@@ -17,7 +17,7 @@ export default function Hero() {
     const camera = new THREE.PerspectiveCamera(55, W / H, 0.1, 600)
     camera.position.set(0, 0, 10)
 
-    const N   = 2800
+    const N   = window.innerWidth < 768 ? 500 : 2800
     const geo = new THREE.BufferGeometry()
     const pos = new Float32Array(N * 3)
     const col = new Float32Array(N * 3)
