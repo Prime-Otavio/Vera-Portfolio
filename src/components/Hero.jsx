@@ -68,43 +68,93 @@ export default function Hero() {
         scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), lmat))
       }
 
-      let t=0, mox=0, moy=0
       const posArr = geo.attributes.position.array
-      const onMouseMove = (e) => {
-        mox=(e.clientX/innerWidth-0.5)*2
-        moy=-(e.clientY/innerHeight-0.5)*2
-      }
-      window.addEventListener('mousemove', onMouseMove, { passive: true })
+      const home = pos.slice()            // posição de origem de cada partícula
+      const vel  = new Float32Array(N * 3)
 
+      // ponto do cursor projetado no plano z=0 (espaço 3D do mundo)
+      const raycaster  = new THREE.Raycaster()
+      const plane      = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0)
+      const ndc        = new THREE.Vector2(0, 0)
+      const mouseWorld = new THREE.Vector3(9999, 9999, 0)
+      let mox = 0, moy = 0, t = 0, pulse = 0
+
+      const onPointerMove = (e) => {
+        ndc.x = (e.clientX / window.innerWidth) * 2 - 1
+        ndc.y = -(e.clientY / window.innerHeight) * 2 + 1
+        mox = ndc.x; moy = ndc.y
+        raycaster.setFromCamera(ndc, camera)
+        raycaster.ray.intersectPlane(plane, mouseWorld)
+      }
+      // clique/toque dispara uma onda de choque que empurra as partículas
+      const onPointerDown = () => { pulse = 1 }
+
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      if (reduce) {
+        // acessibilidade: sem loop de animação, apenas um quadro estático
+        renderer.render(scene, camera)
+        cleanup = () => { renderer.dispose() }
+        return
+      }
+
+      window.addEventListener('pointermove', onPointerMove, { passive: true })
+      window.addEventListener('pointerdown', onPointerDown, { passive: true })
+
+      const R = 3, SPRING = 0.014, DAMP = 0.86, FORCE = 0.035
       let animId
       const animate = () => {
-        animId=requestAnimationFrame(animate); t+=0.005
-        geo.attributes.position.needsUpdate=true
-        for (let i=0;i<N;i++) {
-          posArr[i*3+1]+=0.0015
-          if (posArr[i*3+1]>12) posArr[i*3+1]=-12
+        animId = requestAnimationFrame(animate); t += 0.005
+        pulse *= 0.93
+        const curR     = R * (1 + pulse * 1.4)
+        const curR2    = curR * curR
+        const curForce = FORCE * (1 + pulse * 5)
+        const mx = mouseWorld.x, my = mouseWorld.y
+        for (let i = 0; i < N; i++) {
+          const ix = i*3, iy = ix+1, iz = ix+2
+          // mola que puxa de volta para a origem
+          let ax = (home[ix]-posArr[ix])*SPRING
+          let ay = (home[iy]-posArr[iy])*SPRING
+          let az = (home[iz]-posArr[iz])*SPRING
+          // repulsão a partir do cursor
+          const dx = posArr[ix]-mx, dy = posArr[iy]-my
+          const d2 = dx*dx + dy*dy
+          if (d2 < curR2) {
+            const d = Math.sqrt(d2) + 0.0001
+            const f = (curR - d)/curR * curForce
+            ax += (dx/d)*f; ay += (dy/d)*f
+          }
+          vel[ix] = (vel[ix]+ax)*DAMP
+          vel[iy] = (vel[iy]+ay)*DAMP
+          vel[iz] = (vel[iz]+az)*DAMP
+          posArr[ix] += vel[ix]
+          posArr[iy] += vel[iy]
+          posArr[iz] += vel[iz]
         }
-        camera.position.x+=(mox*1.8-camera.position.x)*0.03
-        camera.position.y+=(moy*1.1-camera.position.y)*0.03
-        camera.lookAt(0,0,0)
-        shapes.forEach(s=>{
-          s.rotation.x+=s.userData.sp*0.007
-          s.rotation.y+=s.userData.sp*0.005
-          s.position.y=s.userData.oy+Math.sin(t*s.userData.sp+s.userData.ph)*1.2
+        geo.attributes.position.needsUpdate = true
+        camera.position.x += (mox*1.2 - camera.position.x)*0.03
+        camera.position.y += (moy*0.8 - camera.position.y)*0.03
+        camera.lookAt(0, 0, 0)
+        shapes.forEach(s => {
+          s.rotation.x += s.userData.sp*0.007
+          s.rotation.y += s.userData.sp*0.005
+          const sc = 1 + pulse*0.3
+          s.scale.set(sc, sc, sc)
+          s.position.y = s.userData.oy + Math.sin(t*s.userData.sp + s.userData.ph)*1.0
         })
         renderer.render(scene, camera)
       }
       animate()
 
       const onResize = () => {
-        const W2=innerWidth,H2=innerHeight
-        camera.aspect=W2/H2; camera.updateProjectionMatrix(); renderer.setSize(W2,H2)
+        const W2 = window.innerWidth, H2 = window.innerHeight
+        camera.aspect = W2/H2; camera.updateProjectionMatrix(); renderer.setSize(W2, H2)
       }
       window.addEventListener('resize', onResize)
 
       cleanup = () => {
         cancelAnimationFrame(animId)
-        window.removeEventListener('mousemove', onMouseMove)
+        window.removeEventListener('pointermove', onPointerMove)
+        window.removeEventListener('pointerdown', onPointerDown)
         window.removeEventListener('resize', onResize)
         renderer.dispose()
       }
