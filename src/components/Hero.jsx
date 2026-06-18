@@ -108,7 +108,7 @@ export default function Hero() {
         window.removeEventListener('resize', onResize)
         renderer.dispose()
       }
-    })
+    }).catch(() => {})
 
     return () => { cancelled = true; cleanup() }
   }, [])
