@@ -3,16 +3,15 @@ import styles from './Sobre.module.css'
 
 const stats = [
   { count: '3',   suf: ' dias', label: 'prazo médio de entrega' },
-  { count: '349', suf: '',      label: 'a partir de — R$'       },
-  { count: '4',   suf: '',      label: 'especialistas no time'   },
+  { count: '10',  suf: '+',     label: 'projetos entregues'      },
+  { count: '3',   suf: '',      label: 'especialistas no time'   },
   { count: '100', suf: '%',     label: 'mobile first'            },
 ]
 
 const team = [
-  { initials: 'AR', name: 'Alaf Rocha',      role: 'Marketing & Growth', tags: ['Aquisição', 'Retenção', 'Growth Hacking', 'Estratégia de marca'] },
-  { initials: 'OB', name: 'Otávio Barbieri', role: 'Backend & IA · Fundador', tags: ['Arquitetura', 'APIs', 'Inteligência Artificial', 'Infraestrutura'] },
-  { initials: 'DP', name: 'Davi Paulino',    role: 'Frontend', tags: ['React', 'TypeScript', 'Design de Interface', 'Performance Web'] },
-  { initials: 'EG', name: 'Enzo Gabriel',    role: 'Design', tags: ['Figma', 'Sistema Visual', 'UX / UI', 'Identidade de Produto'] },
+  { initials: 'AR', name: 'Alaf Rocha',      role: 'Marketing, Growth & Design · Sócio', tags: ['Aquisição', 'Retenção', 'Figma', 'Identidade Visual'] },
+  { initials: 'OB', name: 'Otávio Barbieri', role: 'Backend & IA · Sócio',               tags: ['Arquitetura', 'APIs', 'Inteligência Artificial', 'Infraestrutura'] },
+  { initials: 'DP', name: 'Davi Paulino',    role: 'Frontend · Sócio',                   tags: ['React', 'TypeScript', 'Design de Interface', 'Performance Web'] },
 ]
 
 export default function Sobre() {
@@ -26,15 +25,15 @@ export default function Sobre() {
         <div className={styles.intro}>
           <div>
             <div className="s-label reveal">o grupo</div>
-            <h2 className="reveal">Quatro pessoas.<br /><em>Um padrão.</em></h2>
+            <h2 className="reveal">Três pessoas.<br /><em>Um padrão.</em></h2>
           </div>
           <p className={`${styles.introText} reveal`}>
             A <strong>vera.</strong> nasceu de uma ideia simples: tecnologia bem feita não precisa
-            ser cara nem demorar meses. Somos quatro estudantes de tecnologia em Itu, SP,
+            ser cara nem demorar meses. Somos três pessoas de tecnologia em Itu, SP,
             com foco real em entrega e qualidade.
             <br /><br />
             Cada integrante é especialista no que faz. O que a gente entrega foi pensado,
-            projetado e construído com intenção.
+            construído e testado com intenção.
           </p>
         </div>
 
@@ -58,7 +57,7 @@ export default function Sobre() {
         <div className={styles.teamGrid}>
           {team.map(({ initials, name, role, tags }, i) => (
             <div key={name} className={`${styles.card} reveal d${(i % 4) + 1}`} data-cursor>
-              <div className={styles.cardNum}>0{i + 1} / 04</div>
+              <div className={styles.cardNum}>0{i + 1} / 03</div>
               <div className={styles.avatar}>{initials}</div>
               <div className={styles.cardName}>{name}</div>
               <div className={styles.cardRole}>{role}</div>

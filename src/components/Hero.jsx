@@ -127,7 +127,7 @@ export default function Hero() {
         </h1>
         <p className={styles.sub} id="h-sub">
           Sites, cardápios, dashboards<br />
-          <em>e automações sérias</em> — do design ao resultado.
+          <em>e automações sérias.</em> Do design ao resultado.
         </p>
         <div className={styles.actions} id="h-actions">
           <a href="#lp" className={styles.btnPrimary} data-cursor>
@@ -158,8 +158,8 @@ export default function Hero() {
         </div>
         <span className={styles.trustSep} />
         <div className={styles.trustItem}>
-          <span className={styles.trustNum}>R$349</span>
-          <span className={styles.trustLabel}>a partir de</span>
+          <span className={styles.trustNum}>10+</span>
+          <span className={styles.trustLabel}>projetos entregues</span>
         </div>
         <span className={styles.trustSep} />
         <div className={styles.trustItem}>

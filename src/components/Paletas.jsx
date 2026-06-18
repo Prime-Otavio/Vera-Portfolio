@@ -161,7 +161,7 @@ export default function Paletas() {
             <div className={styles.custHeader}>
               <div>
                 <p className={styles.custEye}>
-                  {isCustom ? 'paleta personalizada' : `editando — ${selected?.name}`}
+                  {isCustom ? 'paleta personalizada' : `editando: ${selected?.name}`}
                 </p>
                 <p className={styles.custHint}>Clique em qualquer cor para ajustar</p>
               </div>

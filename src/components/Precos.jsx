@@ -2,14 +2,13 @@ import { useState } from 'react'
 import { useReveal } from '../hooks/useReveal'
 import styles from './Precos.module.css'
 
-const WA_NUMBER = 'SEU_NUMERO_AQUI'
+const WA_NUMBER = '5511940723507'
 
 const plans = [
   {
     id: 'essencial',
     name: 'Site Essencial',
-    price: '349',
-    desc: 'Landing page responsiva, WhatsApp, formulário simples e SEO básico.',
+    desc: 'Uma landing page completa, com botão de WhatsApp, formulário de contato e SEO básico para aparecer no Google.',
     highlight: false,
     tag: null,
     delivery: '3 dias úteis',
@@ -29,8 +28,7 @@ const plans = [
   {
     id: 'profissional',
     name: 'Site Pro',
-    price: '649',
-    desc: 'Site + WhatsApp inteligente + formulário completo + analytics.',
+    desc: 'Site com várias seções, formulário com envio automático, analytics configurado e WhatsApp por serviço.',
     highlight: true,
     tag: 'mais escolhido',
     delivery: '7 dias úteis',
@@ -50,8 +48,7 @@ const plans = [
   {
     id: 'premium',
     name: 'Presença Completa',
-    price: '999',
-    desc: 'Site + analytics + dashboard + automação de leads.',
+    desc: 'Projeto completo: site, analytics detalhado, dashboard de leads e automação para planilha ou CRM.',
     highlight: false,
     tag: 'mais completo',
     delivery: 'a combinar',
@@ -121,10 +118,6 @@ export default function Precos() {
 
                 <div className={styles.planTop}>
                   <p className={styles.planName}>{p.name}</p>
-                  <div className={styles.planPrice}>
-                    <span className={styles.planCurr}>R$</span>
-                    <span className={styles.planNum}>{p.price}</span>
-                  </div>
                   <p className={styles.planDelivery}>
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
@@ -139,7 +132,7 @@ export default function Precos() {
                   onClick={() => openWA(p.name)}
                   data-cursor
                 >
-                  quero este plano
+                  pedir orçamento
                 </button>
 
                 <ul className={styles.features}>
