@@ -1,5 +1,4 @@
 import Hero        from './Hero'
-import Tape        from './Tape'
 import Sobre       from './Sobre'
 import LandingPages from './LandingPages'
 import Apps        from './Apps'
@@ -11,7 +10,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Tape />
+      <div className="divider" />
       <Sobre />
       <div className="divider" />
       <LandingPages />

@@ -47,7 +47,7 @@ const steps = [
   },
   {
     num: '02',
-    title: 'Construímos e apresentamos',
+    title: 'A gente cria, testa e apresenta',
     desc:  'Desenvolvemos a página ou cardápio, validamos o visual e ajustamos antes de publicar.',
   },
   {

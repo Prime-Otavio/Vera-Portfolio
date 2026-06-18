@@ -148,7 +148,7 @@ export default function Splash({ onDone }) {
             <span className={styles.dot}>.</span>
           </h1>
         </div>
-        <p className={styles.tagline}>do design ao resultado — para negócios locais</p>
+        <p className={styles.tagline}>do design ao resultado, para negócios locais</p>
       </div>
 
       <div className={styles.loaderWrap}>

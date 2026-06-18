@@ -3,7 +3,7 @@ import styles from './Apps.module.css'
 const apps = [
   {
     title: 'vera.',
-    desc: 'Gestão financeira inteligente com IA. Analisa gastos, detecta problemas e sugere soluções — integrado ao Open Finance.',
+    desc: 'Gestão financeira inteligente com IA. Analisa gastos, detecta problemas e sugere soluções, integrado ao Open Finance.',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>

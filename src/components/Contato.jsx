@@ -35,7 +35,7 @@ export default function Contato() {
             <h2 className="reveal">Bora<br /><em>conversar?</em></h2>
             <p className={`${styles.desc} reveal`}>
               A gente responde rápido e sem enrolação.<br />
-              Manda mensagem — a gente vai atrás.
+              Manda mensagem. A gente vai atrás.
             </p>
 
             <div className={`${styles.meta} reveal`}>
@@ -69,7 +69,7 @@ export default function Contato() {
 
             <div className={styles.note}>
               <div className={styles.noteDot} />
-              <span>Disponíveis agora — normalmente respondemos em minutos.</span>
+              <span>Disponíveis agora, normalmente respondemos em minutos.</span>
             </div>
           </div>
         </div>
