@@ -23,7 +23,7 @@ export default function Cursor() {
       ring.style.top  = ry + 'px'
       raf = requestAnimationFrame(loop)
     }
-    window.addEventListener('mousemove', onMove)
+    window.addEventListener('mousemove', onMove, { passive: true })
     loop()
     return () => {
       window.removeEventListener('mousemove', onMove)

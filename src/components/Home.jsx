@@ -1,4 +1,5 @@
 import Hero        from './Hero'
+import Resultados  from './Resultados'
 import Sobre       from './Sobre'
 import LandingPages from './LandingPages'
 import Apps        from './Apps'
@@ -10,6 +11,8 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <div className="divider" />
+      <Resultados />
       <div className="divider" />
       <Sobre />
       <div className="divider" />

@@ -14,7 +14,7 @@
   --gold-glow: rgba(201, 169, 110, 0.18);
 
   --white:     #f2efe8;
-  --muted:     rgba(242, 239, 232, 0.40);
+  --muted:     rgba(242, 239, 232, 0.50);
   --muted2:    rgba(242, 239, 232, 0.18);
   --muted3:    rgba(242, 239, 232, 0.07);
 
@@ -72,6 +72,15 @@ body {
   cursor: none;
 }
 
+/* Acessibilidade: foco visível por teclado (o cursor custom esconde o
+   cursor do sistema, então o anel de foco é essencial para quem navega
+   sem mouse). */
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
 /* Custom cursor */
 #cursor {
   position: fixed;
@@ -84,6 +93,7 @@ body {
   transform: translate(-50%, -50%);
   transition: transform 0.08s;
   mix-blend-mode: normal;
+  will-change: transform, left, top;
 }
 
 #cursor-ring {
@@ -99,6 +109,7 @@ body {
               height 0.25s var(--ease-out),
               border-color 0.25s,
               opacity 0.25s;
+  will-change: transform, left, top;
 }
 
 body:has(a:hover, button:hover, [data-cursor]:hover) #cursor-ring {
