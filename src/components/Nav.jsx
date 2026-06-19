@@ -6,6 +6,7 @@ const tabs = [
   { id: 'portfolio', label: 'portfólio' },
   { id: 'paletas',   label: 'paletas'   },
   { id: 'precos',    label: 'preços'    },
+  { id: 'tapera',    label: 'tapera ⚙️' },
 ]
 
 export default function Nav({ tab, setTab }) {
