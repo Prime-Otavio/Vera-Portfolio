@@ -1,0 +1,433 @@
+[
+  {
+    "title": "Omelete de Espinafre e Queijo",
+    "description": "Omelete fofo com espinafre fresco e queijo, pronto em 10 minutos.",
+    "ingredients": [
+      { "name": "ovos", "amount": 3, "unit": "unidades" },
+      { "name": "espinafre", "amount": 1, "unit": "xicara" },
+      { "name": "queijo", "amount": 50, "unit": "g" },
+      { "name": "manteiga", "amount": 1, "unit": "colher de sopa" },
+      { "name": "sal", "amount": 1, "unit": "pitada" }
+    ],
+    "instructions": [
+      "Bata os ovos com uma pitada de sal.",
+      "Derreta a manteiga em uma frigideira antiaderente.",
+      "Refogue o espinafre por 1 minuto e despeje os ovos.",
+      "Adicione o queijo, dobre a omelete e sirva."
+    ],
+    "prep_time_minutes": 5,
+    "cook_time_minutes": 5,
+    "servings": 1,
+    "difficulty": "easy",
+    "dietary_tags": ["vegetarian", "gluten-free", "low-carb", "keto", "nut-free"],
+    "rating": 4.7
+  },
+  {
+    "title": "Arroz de Frango com Legumes",
+    "description": "Refeicao completa de arroz soltinho com frango desfiado e cenoura.",
+    "ingredients": [
+      { "name": "arroz", "amount": 1, "unit": "xicara" },
+      { "name": "frango", "amount": 300, "unit": "g" },
+      { "name": "cenoura", "amount": 1, "unit": "unidade" },
+      { "name": "cebola", "amount": 1, "unit": "unidade" },
+      { "name": "alho", "amount": 2, "unit": "dentes" },
+      { "name": "ervilha", "amount": 0.5, "unit": "xicara" }
+    ],
+    "instructions": [
+      "Refogue cebola e alho no oleo.",
+      "Adicione o frango em cubos e doure.",
+      "Junte a cenoura, a ervilha e o arroz.",
+      "Cubra com agua quente e cozinhe ate secar."
+    ],
+    "prep_time_minutes": 15,
+    "cook_time_minutes": 25,
+    "servings": 4,
+    "difficulty": "medium",
+    "dietary_tags": ["gluten-free", "dairy-free", "nut-free"],
+    "rating": 4.5
+  },
+  {
+    "title": "Salada de Grao-de-Bico",
+    "description": "Salada fria e proteica com grao-de-bico, tomate e pepino.",
+    "ingredients": [
+      { "name": "grao-de-bico", "amount": 2, "unit": "xicaras" },
+      { "name": "tomate", "amount": 2, "unit": "unidades" },
+      { "name": "pepino", "amount": 1, "unit": "unidade" },
+      { "name": "cebola roxa", "amount": 0.5, "unit": "unidade" },
+      { "name": "azeite", "amount": 2, "unit": "colheres de sopa" },
+      { "name": "limao", "amount": 1, "unit": "unidade" }
+    ],
+    "instructions": [
+      "Escorra e lave o grao-de-bico.",
+      "Pique o tomate, o pepino e a cebola.",
+      "Misture tudo e tempere com azeite, limao e sal."
+    ],
+    "prep_time_minutes": 15,
+    "cook_time_minutes": 0,
+    "servings": 3,
+    "difficulty": "easy",
+    "dietary_tags": ["vegan", "vegetarian", "gluten-free", "dairy-free", "nut-free"],
+    "rating": 4.6
+  },
+  {
+    "title": "Macarrao ao Alho e Oleo",
+    "description": "Classico rapido com alho dourado, azeite e salsinha.",
+    "ingredients": [
+      { "name": "macarrao", "amount": 250, "unit": "g" },
+      { "name": "alho", "amount": 4, "unit": "dentes" },
+      { "name": "azeite", "amount": 3, "unit": "colheres de sopa" },
+      { "name": "salsinha", "amount": 2, "unit": "colheres de sopa" }
+    ],
+    "instructions": [
+      "Cozinhe o macarrao em agua com sal.",
+      "Doure o alho fatiado no azeite, sem queimar.",
+      "Misture o macarrao escorrido e finalize com salsinha."
+    ],
+    "prep_time_minutes": 5,
+    "cook_time_minutes": 15,
+    "servings": 2,
+    "difficulty": "easy",
+    "dietary_tags": ["vegetarian", "vegan", "dairy-free", "nut-free"],
+    "rating": 4.4
+  },
+  {
+    "title": "Sopa de Legumes",
+    "description": "Sopa reconfortante com batata, cenoura, abobrinha e cebola.",
+    "ingredients": [
+      { "name": "batata", "amount": 2, "unit": "unidades" },
+      { "name": "cenoura", "amount": 2, "unit": "unidades" },
+      { "name": "abobrinha", "amount": 1, "unit": "unidade" },
+      { "name": "cebola", "amount": 1, "unit": "unidade" },
+      { "name": "alho", "amount": 2, "unit": "dentes" }
+    ],
+    "instructions": [
+      "Refogue cebola e alho.",
+      "Adicione os legumes picados e cubra com agua.",
+      "Cozinhe ate amaciar e tempere a gosto."
+    ],
+    "prep_time_minutes": 15,
+    "cook_time_minutes": 30,
+    "servings": 4,
+    "difficulty": "easy",
+    "dietary_tags": ["vegan", "vegetarian", "gluten-free", "dairy-free", "nut-free"],
+    "rating": 4.3
+  },
+  {
+    "title": "Panqueca de Banana",
+    "description": "Panqueca saudavel de banana e ovo, sem farinha.",
+    "ingredients": [
+      { "name": "banana", "amount": 2, "unit": "unidades" },
+      { "name": "ovos", "amount": 2, "unit": "unidades" },
+      { "name": "canela", "amount": 1, "unit": "pitada" }
+    ],
+    "instructions": [
+      "Amasse as bananas e misture com os ovos.",
+      "Adicione canela e bata bem.",
+      "Cozinhe pequenas porcoes na frigideira ate dourar."
+    ],
+    "prep_time_minutes": 5,
+    "cook_time_minutes": 10,
+    "servings": 2,
+    "difficulty": "easy",
+    "dietary_tags": ["vegetarian", "gluten-free", "dairy-free", "nut-free"],
+    "rating": 4.5
+  },
+  {
+    "title": "Curry de Lentilha",
+    "description": "Lentilha cremosa com leite de coco e especiarias.",
+    "ingredients": [
+      { "name": "lentilha", "amount": 1, "unit": "xicara" },
+      { "name": "leite de coco", "amount": 200, "unit": "ml" },
+      { "name": "cebola", "amount": 1, "unit": "unidade" },
+      { "name": "alho", "amount": 2, "unit": "dentes" },
+      { "name": "tomate", "amount": 2, "unit": "unidades" },
+      { "name": "curry", "amount": 1, "unit": "colher de sopa" }
+    ],
+    "instructions": [
+      "Refogue cebola, alho e curry.",
+      "Adicione tomate e lentilha lavada.",
+      "Cubra com agua, cozinhe e finalize com leite de coco."
+    ],
+    "prep_time_minutes": 10,
+    "cook_time_minutes": 30,
+    "servings": 4,
+    "difficulty": "medium",
+    "dietary_tags": ["vegan", "vegetarian", "gluten-free", "dairy-free", "nut-free"],
+    "rating": 4.8
+  },
+  {
+    "title": "Frango Grelhado com Brocolis",
+    "description": "Prato fit de file de frango grelhado e brocolis no vapor.",
+    "ingredients": [
+      { "name": "frango", "amount": 400, "unit": "g" },
+      { "name": "brocolis", "amount": 1, "unit": "maco" },
+      { "name": "alho", "amount": 2, "unit": "dentes" },
+      { "name": "azeite", "amount": 1, "unit": "colher de sopa" },
+      { "name": "limao", "amount": 1, "unit": "unidade" }
+    ],
+    "instructions": [
+      "Tempere o frango com alho, limao e sal.",
+      "Grelhe ate dourar dos dois lados.",
+      "Cozinhe o brocolis no vapor e sirva."
+    ],
+    "prep_time_minutes": 10,
+    "cook_time_minutes": 20,
+    "servings": 3,
+    "difficulty": "easy",
+    "dietary_tags": ["gluten-free", "dairy-free", "low-carb", "keto", "nut-free"],
+    "rating": 4.6
+  },
+  {
+    "title": "Tapioca com Queijo",
+    "description": "Tapioca rapidinha recheada com queijo derretido.",
+    "ingredients": [
+      { "name": "goma de tapioca", "amount": 4, "unit": "colheres de sopa" },
+      { "name": "queijo", "amount": 60, "unit": "g" }
+    ],
+    "instructions": [
+      "Peneire a goma na frigideira quente.",
+      "Quando firmar, adicione o queijo.",
+      "Dobre e sirva quente."
+    ],
+    "prep_time_minutes": 3,
+    "cook_time_minutes": 5,
+    "servings": 1,
+    "difficulty": "easy",
+    "dietary_tags": ["vegetarian", "gluten-free", "nut-free"],
+    "rating": 4.2
+  },
+  {
+    "title": "Feijao Tropeiro Simples",
+    "description": "Feijao com farofa, ovos e couve, prato mineiro classico.",
+    "ingredients": [
+      { "name": "feijao", "amount": 2, "unit": "xicaras" },
+      { "name": "farinha de mandioca", "amount": 1, "unit": "xicara" },
+      { "name": "ovos", "amount": 2, "unit": "unidades" },
+      { "name": "couve", "amount": 4, "unit": "folhas" },
+      { "name": "alho", "amount": 2, "unit": "dentes" }
+    ],
+    "instructions": [
+      "Refogue o alho e adicione o feijao cozido escorrido.",
+      "Junte os ovos mexidos e a couve picada.",
+      "Adicione a farinha aos poucos e misture."
+    ],
+    "prep_time_minutes": 15,
+    "cook_time_minutes": 20,
+    "servings": 4,
+    "difficulty": "medium",
+    "dietary_tags": ["gluten-free", "dairy-free", "nut-free"],
+    "rating": 4.7
+  },
+  {
+    "title": "Salada Caprese",
+    "description": "Tomate, mussarela de bufala e manjericao com azeite.",
+    "ingredients": [
+      { "name": "tomate", "amount": 3, "unit": "unidades" },
+      { "name": "queijo", "amount": 150, "unit": "g" },
+      { "name": "manjericao", "amount": 10, "unit": "folhas" },
+      { "name": "azeite", "amount": 2, "unit": "colheres de sopa" }
+    ],
+    "instructions": [
+      "Fatie o tomate e o queijo.",
+      "Intercale com folhas de manjericao.",
+      "Regue com azeite e sal."
+    ],
+    "prep_time_minutes": 10,
+    "cook_time_minutes": 0,
+    "servings": 2,
+    "difficulty": "easy",
+    "dietary_tags": ["vegetarian", "gluten-free", "low-carb", "keto", "nut-free"],
+    "rating": 4.5
+  },
+  {
+    "title": "Strogonoff de Cogumelos",
+    "description": "Versao vegetariana cremosa de strogonoff com champignon.",
+    "ingredients": [
+      { "name": "cogumelo", "amount": 300, "unit": "g" },
+      { "name": "creme de leite", "amount": 200, "unit": "g" },
+      { "name": "cebola", "amount": 1, "unit": "unidade" },
+      { "name": "alho", "amount": 2, "unit": "dentes" },
+      { "name": "molho de tomate", "amount": 3, "unit": "colheres de sopa" }
+    ],
+    "instructions": [
+      "Refogue cebola, alho e cogumelos.",
+      "Adicione o molho de tomate e cozinhe 5 minutos.",
+      "Finalize com creme de leite sem ferver."
+    ],
+    "prep_time_minutes": 10,
+    "cook_time_minutes": 15,
+    "servings": 3,
+    "difficulty": "medium",
+    "dietary_tags": ["vegetarian", "gluten-free", "nut-free"],
+    "rating": 4.4
+  },
+  {
+    "title": "Wrap de Alface com Atum",
+    "description": "Lanche low-carb com folhas de alface recheadas de atum.",
+    "ingredients": [
+      { "name": "atum", "amount": 1, "unit": "lata" },
+      { "name": "alface", "amount": 6, "unit": "folhas" },
+      { "name": "cenoura", "amount": 1, "unit": "unidade" },
+      { "name": "limao", "amount": 1, "unit": "unidade" }
+    ],
+    "instructions": [
+      "Misture o atum com cenoura ralada e limao.",
+      "Coloque a mistura nas folhas de alface.",
+      "Enrole e sirva."
+    ],
+    "prep_time_minutes": 10,
+    "cook_time_minutes": 0,
+    "servings": 2,
+    "difficulty": "easy",
+    "dietary_tags": ["gluten-free", "dairy-free", "low-carb", "keto", "nut-free"],
+    "rating": 4.1
+  },
+  {
+    "title": "Risoto de Abobrinha",
+    "description": "Arroz cremoso cozido lentamente com abobrinha e parmesao.",
+    "ingredients": [
+      { "name": "arroz", "amount": 1.5, "unit": "xicaras" },
+      { "name": "abobrinha", "amount": 1, "unit": "unidade" },
+      { "name": "cebola", "amount": 1, "unit": "unidade" },
+      { "name": "queijo", "amount": 50, "unit": "g" },
+      { "name": "caldo de legumes", "amount": 1, "unit": "litro" }
+    ],
+    "instructions": [
+      "Refogue cebola e arroz na manteiga.",
+      "Adicione o caldo aos poucos, mexendo.",
+      "Junte a abobrinha e finalize com queijo."
+    ],
+    "prep_time_minutes": 10,
+    "cook_time_minutes": 30,
+    "servings": 3,
+    "difficulty": "hard",
+    "dietary_tags": ["vegetarian", "gluten-free", "nut-free"],
+    "rating": 4.6
+  },
+  {
+    "title": "Ovos Mexidos com Tomate",
+    "description": "Cafe da manha rapido de ovos mexidos cremosos com tomate.",
+    "ingredients": [
+      { "name": "ovos", "amount": 3, "unit": "unidades" },
+      { "name": "tomate", "amount": 1, "unit": "unidade" },
+      { "name": "cebolinha", "amount": 1, "unit": "colher de sopa" },
+      { "name": "manteiga", "amount": 1, "unit": "colher de cha" }
+    ],
+    "instructions": [
+      "Refogue o tomate picado na manteiga.",
+      "Adicione os ovos batidos e mexa em fogo baixo.",
+      "Finalize com cebolinha."
+    ],
+    "prep_time_minutes": 5,
+    "cook_time_minutes": 5,
+    "servings": 1,
+    "difficulty": "easy",
+    "dietary_tags": ["vegetarian", "gluten-free", "low-carb", "keto", "nut-free"],
+    "rating": 4.3
+  },
+  {
+    "title": "Quibe Assado de Abobora",
+    "description": "Versao leve e vegana de quibe com abobora e trigo.",
+    "ingredients": [
+      { "name": "trigo para quibe", "amount": 2, "unit": "xicaras" },
+      { "name": "abobora", "amount": 2, "unit": "xicaras" },
+      { "name": "cebola", "amount": 1, "unit": "unidade" },
+      { "name": "hortela", "amount": 3, "unit": "colheres de sopa" }
+    ],
+    "instructions": [
+      "Hidrate o trigo em agua quente.",
+      "Misture com a abobora cozida amassada, cebola e hortela.",
+      "Asse em forma untada por 30 minutos."
+    ],
+    "prep_time_minutes": 20,
+    "cook_time_minutes": 30,
+    "servings": 4,
+    "difficulty": "medium",
+    "dietary_tags": ["vegan", "vegetarian", "dairy-free", "nut-free"],
+    "rating": 4.2
+  },
+  {
+    "title": "Salmao ao Forno com Limao",
+    "description": "File de salmao suculento assado com limao e ervas.",
+    "ingredients": [
+      { "name": "salmao", "amount": 2, "unit": "files" },
+      { "name": "limao", "amount": 1, "unit": "unidade" },
+      { "name": "alho", "amount": 2, "unit": "dentes" },
+      { "name": "azeite", "amount": 1, "unit": "colher de sopa" }
+    ],
+    "instructions": [
+      "Tempere o salmao com alho, limao, azeite e sal.",
+      "Asse a 200C por 18 minutos.",
+      "Sirva com fatias de limao."
+    ],
+    "prep_time_minutes": 10,
+    "cook_time_minutes": 18,
+    "servings": 2,
+    "difficulty": "easy",
+    "dietary_tags": ["gluten-free", "dairy-free", "low-carb", "keto", "nut-free"],
+    "rating": 4.8
+  },
+  {
+    "title": "Purê de Batata Cremoso",
+    "description": "Acompanhamento classico de batata amassada com manteiga.",
+    "ingredients": [
+      { "name": "batata", "amount": 4, "unit": "unidades" },
+      { "name": "manteiga", "amount": 2, "unit": "colheres de sopa" },
+      { "name": "leite", "amount": 100, "unit": "ml" }
+    ],
+    "instructions": [
+      "Cozinhe as batatas ate ficarem macias.",
+      "Amasse com manteiga e leite morno.",
+      "Tempere com sal e mexa ate ficar cremoso."
+    ],
+    "prep_time_minutes": 10,
+    "cook_time_minutes": 20,
+    "servings": 4,
+    "difficulty": "easy",
+    "dietary_tags": ["vegetarian", "gluten-free", "nut-free"],
+    "rating": 4.4
+  },
+  {
+    "title": "Salada de Quinoa",
+    "description": "Quinoa leve com tomate, pepino e ervas frescas.",
+    "ingredients": [
+      { "name": "quinoa", "amount": 1, "unit": "xicara" },
+      { "name": "tomate", "amount": 1, "unit": "unidade" },
+      { "name": "pepino", "amount": 1, "unit": "unidade" },
+      { "name": "limao", "amount": 1, "unit": "unidade" },
+      { "name": "azeite", "amount": 2, "unit": "colheres de sopa" }
+    ],
+    "instructions": [
+      "Cozinhe a quinoa e deixe esfriar.",
+      "Misture com tomate e pepino picados.",
+      "Tempere com limao, azeite e sal."
+    ],
+    "prep_time_minutes": 10,
+    "cook_time_minutes": 15,
+    "servings": 3,
+    "difficulty": "easy",
+    "dietary_tags": ["vegan", "vegetarian", "gluten-free", "dairy-free", "nut-free"],
+    "rating": 4.5
+  },
+  {
+    "title": "Hamburguer Caseiro",
+    "description": "Hamburguer suculento de carne moida temperada.",
+    "ingredients": [
+      { "name": "carne moida", "amount": 500, "unit": "g" },
+      { "name": "cebola", "amount": 1, "unit": "unidade" },
+      { "name": "alho", "amount": 2, "unit": "dentes" },
+      { "name": "pao de hamburguer", "amount": 4, "unit": "unidades" }
+    ],
+    "instructions": [
+      "Tempere a carne com cebola, alho e sal.",
+      "Modele os hamburgueres e grelhe.",
+      "Monte no pao com os acompanhamentos preferidos."
+    ],
+    "prep_time_minutes": 15,
+    "cook_time_minutes": 10,
+    "servings": 4,
+    "difficulty": "medium",
+    "dietary_tags": ["dairy-free", "nut-free"],
+    "rating": 4.6
+  }
+]
