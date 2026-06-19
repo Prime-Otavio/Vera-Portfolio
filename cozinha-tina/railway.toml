@@ -1,0 +1,15 @@
+# Deploy do frontend (SPA Vite) no Railway via Nixpacks.
+#
+# IMPORTANTE: VITE_SUPABASE_URL e VITE_SUPABASE_ANON_KEY precisam estar
+# definidas como variaveis no Railway -- o Vite as embute no bundle em tempo
+# de BUILD. (Nao configure ANTHROPIC_API_KEY aqui; ela vive no Supabase.)
+
+[build]
+builder = "nixpacks"
+buildCommand = "npm run build"
+
+[deploy]
+# vite.config.ts ja le $PORT e libera o host publico do Railway no preview.
+startCommand = "npm run preview"
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 3

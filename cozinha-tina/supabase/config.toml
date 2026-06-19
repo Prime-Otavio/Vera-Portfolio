@@ -1,0 +1,11 @@
+# Configuracao do projeto Supabase (CLI).
+# Vincule o projeto remoto com:  supabase link --project-ref totoqtabdjwoqxaferph
+project_id = "totoqtabdjwoqxaferph"
+
+[functions.analyze-pantry]
+# Exige usuario autenticado para chamar a function -> protege a chave da
+# Anthropic contra abuso anonimo.
+verify_jwt = true
+
+[functions.search-recipes]
+verify_jwt = true
