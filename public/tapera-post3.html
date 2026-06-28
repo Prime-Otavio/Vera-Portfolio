@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width:1080px; height:1080px; overflow:hidden; font-family:'Montserrat', sans-serif; }
+
+  .post { width:1080px; height:1080px; display:flex; flex-direction:column; background:#fff; }
+
+  /* HEADER */
+  .post-header { background:#003B8E; padding:30px 60px; display:flex; align-items:center; justify-content:space-between; position:relative; overflow:hidden; }
+  .header-watermark { position:absolute; right:240px; top:-40px; width:200px; height:200px; opacity:0.10; color:#fff; }
+  .header-watermark svg { width:100%; height:100%; }
+  .header-left { display:flex; flex-direction:column; gap:6px; z-index:1; }
+  .header-eyebrow { font-size:12px; font-weight:700; color:#1E88E5; letter-spacing:5px; text-transform:uppercase; }
+  .header-title { font-size:36px; font-weight:900; color:#fff; line-height:1.08; }
+  .header-title span { color:#1E88E5; }
+  .header-logo { background:#fff; border-radius:12px; padding:9px 16px; display:flex; align-items:center; gap:10px; z-index:1; }
+  .header-logo img { height:48px; object-fit:contain; }
+  .header-logo span { font-size:17px; font-weight:800; color:#003B8E; }
+
+  /* INTRO */
+  .intro-row { background:#EFF6FF; padding:24px 60px; border-bottom:2px solid #BFDBFE; }
+  .intro-text { font-size:19px; font-weight:600; color:#003B8E; text-align:center; line-height:1.4; }
+
+  /* COMPARISON */
+  .comparison { flex:1; display:grid; grid-template-columns:1fr 1fr; }
+  .col { display:flex; flex-direction:column; padding:34px 46px; }
+  .col-repair { border-right:3px solid #E5E7EB; }
+  .col-buy { background:#FFFBFB; }
+  .col-header { display:flex; align-items:center; gap:16px; margin-bottom:30px; }
+  .col-icon { width:56px; height:56px; flex-shrink:0; }
+  .col-icon svg { width:100%; height:100%; }
+  .col-title { font-size:23px; font-weight:800; line-height:1.15; }
+  .col-title.yes { color:#15803D; }
+  .col-title.no  { color:#B91C1C; }
+
+  .item-list { list-style:none; display:flex; flex-direction:column; gap:20px; }
+  .item-list li { display:flex; align-items:flex-start; gap:12px; }
+  .item-marker { width:26px; height:26px; flex-shrink:0; margin-top:2px; }
+  .item-marker svg { width:100%; height:100%; }
+  .item-text strong { font-size:17px; font-weight:700; color:#111827; display:block; line-height:1.3; margin-bottom:3px; }
+  .item-text span { font-size:14px; font-weight:400; color:#6B7280; line-height:1.4; }
+
+  /* BOTTOM */
+  .bottom-section { background:#003B8E; padding:30px 60px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+  .bottom-text { display:flex; flex-direction:column; gap:6px; }
+  .bottom-main { font-size:19px; font-weight:800; color:#fff; line-height:1.3; }
+  .bottom-sub { font-size:14px; font-weight:600; color:#9CA3AF; display:flex; align-items:center; gap:8px; }
+  .bottom-sub svg { width:16px; height:16px; color:#1E88E5; }
+  .cta-btn { background:#1E88E5; color:#fff; font-size:15px; font-weight:800; letter-spacing:2px; text-transform:uppercase; padding:18px 30px; border-radius:8px; text-align:center; white-space:nowrap; display:flex; align-items:center; gap:12px; }
+  .cta-btn svg { width:26px; height:26px; color:#fff; }
+  .accent-bar-bottom { height:6px; background:#1E88E5; }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute"><defs>
+  <symbol id="ic-check-circle" viewBox="0 0 120 120">
+    <circle cx="60" cy="60" r="46" fill="#DCFCE7" stroke="#22C55E" stroke-width="5"/>
+    <path d="M40 62 L54 76 L82 46" fill="none" stroke="#16A34A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="ic-cross-circle" viewBox="0 0 120 120">
+    <circle cx="60" cy="60" r="46" fill="#FEE2E2" stroke="#EF4444" stroke-width="5"/>
+    <path d="M45 45 L75 75 M75 45 L45 75" fill="none" stroke="#DC2626" stroke-width="7" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="ic-check-sm" viewBox="0 0 120 120">
+    <circle cx="60" cy="60" r="52" fill="#22C55E"/>
+    <path d="M38 62 L54 78 L84 44" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="ic-cross-sm" viewBox="0 0 120 120">
+    <circle cx="60" cy="60" r="52" fill="#EF4444"/>
+    <path d="M44 44 L76 76 M76 44 L44 76" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="ic-tap" viewBox="0 0 120 120">
+    <g fill="none" stroke="currentColor" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M52 56 V36 a8 8 0 0 1 16 0 v28"/><path d="M68 52 a7 7 0 0 1 14 0 v6"/>
+      <path d="M82 56 a7 7 0 0 1 12 0 v8"/>
+      <path d="M52 60 l-10 6 a8 8 0 0 0-3 11 l10 18 a14 14 0 0 0 12 7 h16 a14 14 0 0 0 14-13 l1-31"/>
+    </g>
+  </symbol>
+  <symbol id="ic-pin" viewBox="0 0 120 120">
+    <path d="M60 20 a26 26 0 0 1 26 26 c0 20-26 48-26 48 S34 66 34 46 A26 26 0 0 1 60 20 Z" fill="none" stroke="currentColor" stroke-width="6" stroke-linejoin="round"/>
+    <circle cx="60" cy="46" r="9" fill="none" stroke="currentColor" stroke-width="6"/>
+  </symbol>
+  <symbol id="ic-toothgear" viewBox="0 0 120 120">
+    <path d="M40 24 C30 24 24 32 24 44 C24 60 30 72 34 88 C36 96 44 96 45 88 L48 68 C48 64 54 64 54 68 L57 88 C58 96 66 96 68 88 C72 72 78 60 78 44 C78 32 72 24 62 24 C55 24 54 30 50 30 C46 30 47 24 40 24 Z" fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/>
+    <g fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round">
+      <circle cx="86" cy="80" r="13"/><circle cx="86" cy="80" r="5"/>
+      <g stroke-linecap="round">
+        <line x1="86" y1="62" x2="86" y2="67"/><line x1="86" y1="93" x2="86" y2="98"/>
+        <line x1="68" y1="80" x2="73" y2="80"/><line x1="99" y1="80" x2="104" y2="80"/>
+        <line x1="73" y1="67" x2="76" y2="70"/><line x1="96" y1="90" x2="99" y2="93"/>
+        <line x1="99" y1="67" x2="96" y2="70"/><line x1="76" y1="90" x2="73" y2="93"/>
+      </g>
+    </g>
+  </symbol>
+</defs></svg>
+
+<div class="post">
+  <div class="post-header">
+    <div class="header-watermark"><svg><use href="#ic-toothgear"/></svg></div>
+    <div class="header-left">
+      <div class="header-eyebrow">Guia Prático</div>
+      <div class="header-title">Reparar ou<br><span>comprar novo?</span></div>
+    </div>
+    <div class="header-logo"><img src="/tapera-logo.jpeg" alt="Logo"><span>TAPERÁ</span></div>
+  </div>
+
+  <div class="intro-row">
+    <div class="intro-text">Antes de gastar R$ 8.000 num equipamento novo, responda: o problema é estrutural ou é desgaste de peça?</div>
+  </div>
+
+  <div class="comparison">
+    <div class="col col-repair">
+      <div class="col-header">
+        <div class="col-icon"><svg><use href="#ic-check-circle"/></svg></div>
+        <div class="col-title yes">Vale reparar<br>quando...</div>
+      </div>
+      <ul class="item-list">
+        <li><div class="item-marker"><svg><use href="#ic-check-sm"/></svg></div><div class="item-text"><strong>A estrutura está em boas condições</strong><span>Motor, chassis e componentes principais sem dano</span></div></li>
+        <li><div class="item-marker"><svg><use href="#ic-check-sm"/></svg></div><div class="item-text"><strong>A peça tem reposição no mercado</strong><span>Peças de fabricante ou compatíveis de qualidade</span></div></li>
+        <li><div class="item-marker"><svg><use href="#ic-check-sm"/></svg></div><div class="item-text"><strong>Custo &lt; 40% do equipamento novo</strong><span>Reparo devolve anos de vida útil por fração do preço</span></div></li>
+        <li><div class="item-marker"><svg><use href="#ic-check-sm"/></svg></div><div class="item-text"><strong>É o primeiro ou segundo reparo</strong><span>Histórico de manutenção saudável</span></div></li>
+        <li><div class="item-marker"><svg><use href="#ic-check-sm"/></svg></div><div class="item-text"><strong>Equipamento com menos de 10 anos</strong><span>Vida útil preservada com manutenção adequada</span></div></li>
+      </ul>
+    </div>
+
+    <div class="col col-buy">
+      <div class="col-header">
+        <div class="col-icon"><svg><use href="#ic-cross-circle"/></svg></div>
+        <div class="col-title no">Vale trocar<br>quando...</div>
+      </div>
+      <ul class="item-list">
+        <li><div class="item-marker"><svg><use href="#ic-cross-sm"/></svg></div><div class="item-text"><strong>Passou da vida útil do fabricante</strong><span>Peças em cascata — consertar um quebra outro</span></div></li>
+        <li><div class="item-marker"><svg><use href="#ic-cross-sm"/></svg></div><div class="item-text"><strong>Não há mais peça disponível</strong><span>Equipamento fora de linha sem suporte técnico</span></div></li>
+        <li><div class="item-marker"><svg><use href="#ic-cross-sm"/></svg></div><div class="item-text"><strong>Custo do reparo &gt; 60% do novo</strong><span>Investir no reparo não compensa</span></div></li>
+        <li><div class="item-marker"><svg><use href="#ic-cross-sm"/></svg></div><div class="item-text"><strong>Reparos viraram rotina mensal</strong><span>Custo acumulado ultrapassa o de um novo</span></div></li>
+        <li><div class="item-marker"><svg><use href="#ic-cross-sm"/></svg></div><div class="item-text"><strong>Tecnologia muito defasada</strong><span>Compromete procedimentos e segurança</span></div></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="bottom-section">
+    <div class="bottom-text">
+      <div class="bottom-main">Na dúvida? A gente faz o diagnóstico com transparência.</div>
+      <div class="bottom-sub"><svg><use href="#ic-pin"/></svg>26 anos · Garantia 90 dias · Salto · Itu · Indaiatuba · Cabreúva</div>
+    </div>
+    <div class="cta-btn"><svg><use href="#ic-tap"/></svg> CONTATO NA BIO</div>
+  </div>
+  <div class="accent-bar-bottom"></div>
+</div>
+</body>
+</html>

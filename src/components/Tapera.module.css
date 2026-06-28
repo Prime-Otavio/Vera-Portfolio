@@ -1,0 +1,1005 @@
+/* ─── PAGE WRAPPER ──────────────────────────────────────────── */
+.page {
+  background: var(--bg);
+  color: var(--white);
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 var(--pad-x);
+}
+
+/* ─── SECTIONS ─────────────────────────────────────────────── */
+.section {
+  padding: clamp(5rem, 14vh, 10rem) 0;
+}
+
+.sectionAlt {
+  padding: clamp(5rem, 14vh, 10rem) 0;
+  background: var(--surface);
+}
+
+.sectionSub {
+  color: var(--muted);
+  max-width: 600px;
+  margin-bottom: 3rem;
+  line-height: 1.7;
+}
+
+/* ─── HERO ─────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  padding: clamp(8rem, 20vh, 14rem) 0 clamp(5rem, 10vh, 8rem);
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+
+.logoBox {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.logoT {
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, #003B8E, #1E88E5);
+  color: white;
+  font-family: 'Montserrat', 'DM Sans', sans-serif;
+  font-weight: 900;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+}
+
+.logoMain {
+  font-family: 'Montserrat', 'DM Sans', sans-serif;
+  font-weight: 900;
+  font-size: 1.1rem;
+  letter-spacing: 0.12em;
+  color: #1E88E5;
+  line-height: 1;
+}
+
+.logoSub {
+  font-size: 0.68rem;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 0.2rem;
+}
+
+.heroTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #1E88E5;
+  font-family: var(--font-mono);
+  margin-bottom: 1.5rem;
+  background: rgba(30, 136, 229, 0.08);
+  border: 1px solid rgba(30, 136, 229, 0.2);
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+}
+
+.tagDot {
+  width: 6px;
+  height: 6px;
+  background: #1E88E5;
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.heroTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+}
+
+.blue {
+  color: #1E88E5;
+}
+
+.heroSub {
+  color: var(--muted);
+  max-width: 640px;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  margin-bottom: 3rem;
+}
+
+.heroMeta {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.metaItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.metaNum {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1E88E5;
+  line-height: 1;
+}
+
+.metaLabel {
+  font-size: 0.68rem;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.metaDivider {
+  width: 1px;
+  height: 36px;
+  background: var(--border2);
+}
+
+.gearBg {
+  position: absolute;
+  right: -4rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 360px;
+  height: 360px;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* ─── CONFIRM ──────────────────────────────────────────────── */
+.confirm {
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.confirmBox {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  background: rgba(30, 136, 229, 0.06);
+  border: 1px solid rgba(30, 136, 229, 0.18);
+  border-radius: var(--r-lg);
+  padding: 1.5rem 2rem;
+}
+
+.confirmIcon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.confirmText {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1E88E5;
+  margin-bottom: 0.5rem;
+}
+
+.confirmSub {
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  letter-spacing: 0.04em;
+}
+
+/* ─── PAINS ────────────────────────────────────────────────── */
+.painsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.2rem;
+}
+
+.painCard {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 1.8rem;
+  transition: border-color 0.25s, transform 0.25s;
+  cursor: default;
+}
+
+.painCard:hover {
+  border-color: rgba(30, 136, 229, 0.35);
+  transform: translateY(-3px);
+}
+
+.painIcon {
+  font-size: 1.6rem;
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+.painTitle {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.6rem;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.painDesc {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+/* ─── DELIVERABLES ─────────────────────────────────────────── */
+.delivGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.delivCard {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: border-color 0.25s;
+}
+
+.delivCard:hover {
+  border-color: rgba(30, 136, 229, 0.3);
+}
+
+.delivNum {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.delivTitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.delivSub {
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ─── LEAKAGE TABLE ────────────────────────────────────────── */
+.leakTable {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+
+.leakRow {
+  display: grid;
+  grid-template-columns: 180px 1fr 1fr;
+  background: var(--surface2);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.2s;
+}
+
+.leakRow:last-child { border-bottom: none; }
+
+.leakRow:hover { background: var(--surface3); }
+
+.leakStage {
+  padding: 1.4rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  border-right: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.leakNum {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--muted2);
+}
+
+.leakStageName {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.leakProblem, .leakFix {
+  padding: 1.4rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.leakFix {
+  border-left: 1px solid var(--border);
+  background: rgba(30, 136, 229, 0.03);
+}
+
+.leakLabel {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  color: var(--muted2);
+  text-transform: uppercase;
+}
+
+.leakProblem p { color: rgba(242, 239, 232, 0.65); font-size: 0.83rem; line-height: 1.6; }
+.leakFix p     { color: #1E88E5; font-size: 0.83rem; line-height: 1.6; }
+
+/* ─── FUNNELS ──────────────────────────────────────────────── */
+.funnelsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.funnelPanel {
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  transition: border-color 0.25s;
+}
+
+.funnelActive {
+  border-color: var(--clr);
+}
+
+.funnelTab {
+  width: 100%;
+  background: var(--surface2);
+  border: none;
+  padding: 1.6rem 2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-align: left;
+  transition: background 0.2s;
+  border-left: 3px solid var(--clr, var(--border2));
+}
+
+.funnelTab:hover { background: var(--surface3); }
+
+.funnelTabLabel {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+
+.funnelTabTag {
+  font-size: 0.78rem;
+  color: var(--muted);
+  flex: 1;
+}
+
+.funnelTabChev {
+  font-size: 0.75rem;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+.funnelContent {
+  padding: 1.6rem 2rem;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+
+.funnelTagline {
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+/* ─── STAGES ───────────────────────────────────────────────── */
+.stages {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stage {
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.stage:hover, .stageOpen {
+  border-color: var(--clr, #1E88E5);
+}
+
+.stageHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 1.2rem;
+  background: var(--surface2);
+  transition: background 0.2s;
+}
+
+.stageOpen .stageHeader { background: var(--surface3); }
+
+.stageNum {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: white;
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+}
+
+.stageIcon { font-size: 1rem; }
+
+.stageName {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.08em;
+  flex: 1;
+}
+
+.stageChevron {
+  font-size: 1.1rem;
+  color: var(--muted);
+  flex-shrink: 0;
+  font-weight: 300;
+}
+
+.stageBody {
+  padding: 1.2rem 1.6rem;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.stageRow {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.stageKey {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  color: var(--muted2);
+  text-transform: uppercase;
+  padding-top: 0.2rem;
+}
+
+.stageVal {
+  font-size: 0.85rem;
+  color: rgba(242, 239, 232, 0.8);
+  line-height: 1.65;
+}
+
+.headlineBox, .headlinesBox {
+  border-left: 3px solid;
+  padding: 1rem 1.2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+}
+
+.headlineLabel {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  color: var(--muted2);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.6rem;
+}
+
+.headlineText {
+  font-style: italic;
+  color: var(--white);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 0.4rem;
+}
+
+/* ─── MAP VISUAL ───────────────────────────────────────────── */
+.mapWrap {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.mapFlow {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-wrap: wrap;
+  row-gap: 1.5rem;
+}
+
+.mapNode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.mapCircle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.mapIcon { line-height: 1; }
+
+.mapNodeText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  text-align: center;
+}
+
+.mapStep {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--white);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.mapSub {
+  font-size: 0.6rem;
+  color: var(--muted);
+  text-align: center;
+  max-width: 72px;
+  line-height: 1.3;
+}
+
+.mapArrow {
+  width: 28px;
+  height: 2px;
+  margin: 0 0.5rem;
+  opacity: 0.4;
+  flex-shrink: 0;
+  align-self: center;
+  margin-bottom: 2.2rem;
+}
+
+.mapBranch {
+  border-top: 1px solid var(--border);
+  padding-top: 2rem;
+}
+
+.branchLabel {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+.branchItems {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.branchItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  font-size: 0.83rem;
+  color: rgba(242, 239, 232, 0.75);
+  line-height: 1.5;
+}
+
+.branchDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 0.35rem;
+}
+
+/* ─── TOOLS ────────────────────────────────────────────────── */
+.toolsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.toolCard {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 1.4rem 1.6rem;
+  transition: border-color 0.2s;
+}
+
+.toolCard:hover { border-color: rgba(30, 136, 229, 0.3); }
+
+.toolTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin-bottom: 0.7rem;
+}
+
+.toolName {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.toolBadge {
+  font-size: 0.6rem;
+  font-family: var(--font-mono);
+  letter-spacing: 0.1em;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  color: white;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.toolRole {
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.investBox {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background: rgba(30, 136, 229, 0.07);
+  border: 1px solid rgba(30, 136, 229, 0.2);
+  border-radius: var(--r-lg);
+  padding: 1.6rem 2rem;
+  flex-wrap: wrap;
+}
+
+.investItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.investNum {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1E88E5;
+  line-height: 1;
+}
+
+.investLabel {
+  font-size: 0.72rem;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+}
+
+.investDivider {
+  width: 1px;
+  height: 40px;
+  background: var(--border2);
+}
+
+/* ─── PLAN 30 DIAS ─────────────────────────────────────────── */
+.plan {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.2rem;
+}
+
+.planWeek {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.planWeek:hover { border-color: rgba(30, 136, 229, 0.3); }
+
+.planWeekHeader {
+  padding: 1.2rem 1.5rem;
+  background: linear-gradient(135deg, #003B8E, #1E88E5);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.planWeekNum {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: rgba(255,255,255,0.7);
+  text-transform: uppercase;
+}
+
+.planWeekLabel {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+}
+
+.planWeekDays {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.6);
+}
+
+.planTasks {
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  list-style: none;
+}
+
+.planTask {
+  display: flex;
+  gap: 0.7rem;
+  font-size: 0.8rem;
+  color: rgba(242, 239, 232, 0.78);
+  line-height: 1.55;
+}
+
+.planCheck {
+  color: #1E88E5;
+  flex-shrink: 0;
+  font-weight: 700;
+  margin-top: 0.05rem;
+}
+
+/* ─── EMAILS ───────────────────────────────────────────────── */
+.emailsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.emailCard {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--clr);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+
+.emailHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.4rem 1.8rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.emailNum {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: white;
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+}
+
+.emailDay {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--muted2);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.2rem;
+}
+
+.emailSubject {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.emailBody {
+  padding: 1.8rem;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: rgba(242, 239, 232, 0.72);
+  line-height: 1.8;
+  white-space: pre-wrap;
+  margin: 0;
+}
+
+/* ─── CTA ──────────────────────────────────────────────────── */
+.cta {
+  padding: clamp(5rem, 12vh, 9rem) 0;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+
+.ctaBox {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.ctaGear {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.ctaTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--white);
+  letter-spacing: -0.02em;
+  margin-bottom: 1.2rem;
+}
+
+.ctaSub {
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.75;
+  max-width: 580px;
+  margin: 0 auto 2.5rem;
+}
+
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  background: #1E88E5;
+  color: white;
+  text-decoration: none;
+  padding: 1rem 2.2rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.ctaBtn:hover {
+  background: #003B8E;
+  transform: translateY(-2px);
+}
+
+/* ─── RESPONSIVE ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .leakRow {
+    grid-template-columns: 1fr;
+  }
+
+  .leakStage {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .leakFix {
+    border-left: none;
+    border-top: 1px solid var(--border);
+  }
+
+  .funnelTab {
+    flex-wrap: wrap;
+  }
+
+  .mapFlow {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+  }
+
+  .mapArrow {
+    width: 20px;
+  }
+
+  .investBox {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
+  }
+
+  .investDivider {
+    width: 40px;
+    height: 1px;
+  }
+
+  .heroMeta {
+    gap: 1.2rem;
+  }
+
+  .metaDivider {
+    height: 24px;
+  }
+
+  .stageRow {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+  }
+
+  .gearBg {
+    display: none;
+  }
+
+  .plan {
+    grid-template-columns: 1fr;
+  }
+
+  .emailBody {
+    font-size: 0.78rem;
+  }
+}

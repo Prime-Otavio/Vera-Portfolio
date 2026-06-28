@@ -11,11 +11,12 @@ import { useLenis } from './hooks/useLenis'
 const Portfolio = lazy(() => import('./components/Portfolio'))
 const Paletas   = lazy(() => import('./components/Paletas'))
 const Precos    = lazy(() => import('./components/Precos'))
+const Tapera    = lazy(() => import('./components/Tapera'))
 
 // mapeia cada aba para uma URL real (e vice-versa) para que o Google
 // indexe cada página e os botões voltar/avançar do navegador funcionem.
-const TAB_PATHS = { home: '/', portfolio: '/portfolio', paletas: '/paletas', precos: '/precos' }
-const PATH_TABS = { '/': 'home', '/portfolio': 'portfolio', '/paletas': 'paletas', '/precos': 'precos' }
+const TAB_PATHS = { home: '/', portfolio: '/portfolio', paletas: '/paletas', precos: '/precos', tapera: '/tapera' }
+const PATH_TABS = { '/': 'home', '/portfolio': 'portfolio', '/paletas': 'paletas', '/precos': 'precos', '/tapera': 'tapera' }
 const tabFromPath = () => PATH_TABS[window.location.pathname] || 'home'
 
 export default function App() {
@@ -54,6 +55,7 @@ export default function App() {
           {tab === 'portfolio' && <Portfolio key="portfolio" />}
           {tab === 'paletas'   && <Paletas   key="paletas"   />}
           {tab === 'precos'    && <Precos    key="precos"    />}
+          {tab === 'tapera'    && <Tapera    key="tapera"    />}
         </Suspense>
       </main>
       <Footer />
