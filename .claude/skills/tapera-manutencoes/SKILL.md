@@ -392,16 +392,32 @@ Na dúvida? A gente faz o diagnóstico e te diz com transparência o que compens
 
 ## 17. Calendário de Agendamento (1ª Leva)
 
+> ⚠️ Calendário ATUALIZADO em 28/06/2026 (as datas originais 23/25/28 já passaram). Artes APROVADAS pelo cliente em 28/06/2026 (versão v2 com ícones SVG).
+
 | Peça | Data | Hora | Redes | Timezone |
 |---|---|---|---|---|
-| 1 — Apresentação | Seg 23/06/2026 | 09:00 | Instagram + Facebook | America/Sao_Paulo |
-| 2 — Carrossel 5 Sinais | Qua 25/06/2026 | 10:00 | Instagram + Facebook | America/Sao_Paulo |
-| 3 — Reparar ou comprar | Sáb 28/06/2026 | 10:00 | Instagram + Facebook | America/Sao_Paulo |
+| 1 — Apresentação | Seg 29/06/2026 | 09:00 | Instagram + Facebook | America/Sao_Paulo |
+| 2 — Carrossel 5 Sinais | Qua 01/07/2026 | 10:00 | Instagram + Facebook | America/Sao_Paulo |
+| 3 — Reparar ou comprar | Sáb 04/07/2026 | 10:00 | Instagram + Facebook | America/Sao_Paulo |
 
 - Instagram: `@tapera_manutencoes` · Facebook Page ID: `1144503125413731`
 - Metricool brandId: `6428661` · usar `timezone: "America/Sao_Paulo"` nas chamadas.
 - Geolocalização não é aceita em post agendado automático no IG → cidades vão na legenda/hashtags.
-- Carrossel: enviar TODAS as 7 imagens no array de mídia (não só a capa).
+- Carrossel: enviar TODAS as 7 imagens no array de mídia, na ordem slide-1 → slide-7.
+
+### URLs das mídias APROVADAS (raw GitHub, status 200, prontas para Metricool)
+Base: `https://raw.githubusercontent.com/Prime-Otavio/Vera-Portfolio/claude/dental-repair-funnel-design-ulul3b/public/`
+
+| Peça | Arquivo(s) |
+|---|---|
+| Post 1 | `tapera-post1.jpeg` |
+| Carrossel | `tapera-slide-1.jpeg`, `tapera-slide-2.jpeg`, `tapera-slide-3.jpeg`, `tapera-slide-4.jpeg`, `tapera-slide-5.jpeg`, `tapera-slide-6.jpeg`, `tapera-slide-7.jpeg` |
+| Post 3 | `tapera-post3.jpeg` |
+
+> As artes são geradas por código (HTML + Montserrat + ícones SVG line-art da marca, fonte
+> dos templates em `public/tapera-post1.html`, `tapera-carousel.html`, `tapera-post3.html`).
+> Para regerar: `node` com Playwright em `/opt/node22/lib/node_modules/playwright`, viewport 1080,
+> trocando `/tapera-logo.jpeg` por data-URI base64 (ver script usado na sessão de 28/06).
 
 ---
 
@@ -417,13 +433,22 @@ da conta do chat. Ligar o toggle de um conector com o container já rodando **n�
 3. No início, pedir: "continue o trabalho da Tapera (skill tapera-manutencoes)". O contexto inteiro está aqui.
 4. Verificar que aparecem as tools `mcp__Canva__*` e `mcp__contas_osmario__*` antes de começar.
 
-**Fluxo de execução quando os MCPs estiverem online (uma tacada só):**
-1. Reenviar a foto do Osmário → salvar em `public/osmario-tecnico.jpeg` (commit).
-2. Canva: `upload-asset-from-url` para logo (`/tapera-logo.jpeg`) e foto (`/osmario-tecnico.jpeg`) via URL raw do GitHub.
-3. Gerar as 3 peças (seção 15) com a logo real. Carrossel = 7 slides completos.
-4. Mostrar TODAS as artes (thumbnails) para o Osmário aprovar — nada salvo/agendado sem OK.
-5. Após aprovação: Metricool `createScheduledPost` para IG + FB conforme calendário (seção 17), legendas da seção 16, sem telefone.
+**ESTADO ATUAL (28/06/2026):** Artes v2 APROVADAS e commitadas. Só falta AGENDAR no Metricool.
+Nas sessões anteriores o conector `contas osmario` ficou offline no container — agendamento pendente.
+
+**Fluxo de execução assim que `mcp__contas_osmario__*` estiver online (uma tacada só):**
+1. Confirmar tools `mcp__contas_osmario__*` carregadas (`getBrandSettings` brandId 6428661).
+2. Para cada peça, `createScheduledPost` com:
+   - `brandId: "6428661"`, `timezone: "America/Sao_Paulo"`
+   - Redes: Instagram (`@tapera_manutencoes`) E Facebook (Page `1144503125413731`)
+   - Data/hora conforme §17 (29/06 09h, 01/07 10h, 04/07 10h)
+   - Legenda + hashtags da §16 (SEM telefone — "Contato na bio")
+   - Mídia: URL(s) raw da §17. Carrossel = as 7 imagens em ordem.
+3. Conferir com `getScheduledPosts` que os 3 (×2 redes) entraram.
+4. Avisar o cliente que está agendado.
 
 **Assets já disponíveis no repo (URL raw pública, status 200):**
-- Logo: `https://raw.githubusercontent.com/Prime-Otavio/Vera-Portfolio/claude/dental-repair-funnel-design-ulul3b/public/tapera-logo.jpeg`
-- Arquivo Figma de rascunho criado: `https://www.figma.com/design/xqwSiXTm8TKFqRDaXKE08P` (a tool `use_figma` exige aprovação manual no painel para desenhar).
+- Logo: `.../public/tapera-logo.jpeg`
+- Artes finais aprovadas: ver tabela de URLs na §17.
+- Templates HTML editáveis: `public/tapera-post1.html`, `tapera-carousel.html`, `tapera-post3.html`.
+- Arquivo Figma de rascunho: `https://www.figma.com/design/xqwSiXTm8TKFqRDaXKE08P` (plano Starter tem limite baixo de chamadas MCP — preferir o fluxo HTML+Playwright).
