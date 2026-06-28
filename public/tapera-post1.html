@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1080px;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .post {
+    width: 1080px;
+    height: 1080px;
+    display: flex;
+    position: relative;
+    background: #FFFFFF;
+  }
+
+  /* ── LEFT SIDEBAR ── */
+  .sidebar {
+    width: 400px;
+    height: 1080px;
+    background: #003B8E;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 24px;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .sidebar-accent {
+    width: 100%;
+    height: 6px;
+    background: #1E88E5;
+    margin-bottom: 36px;
+  }
+
+  .logo-wrap {
+    width: 160px;
+    height: 160px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+
+  .logo-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .brand-name {
+    font-size: 38px;
+    font-weight: 900;
+    color: #FFFFFF;
+    letter-spacing: 2px;
+    text-align: center;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .brand-sub {
+    font-size: 12px;
+    font-weight: 600;
+    color: #1E88E5;
+    letter-spacing: 6px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .divider-h {
+    width: 50px;
+    height: 3px;
+    background: #1E88E5;
+    margin-bottom: 28px;
+  }
+
+  .stat-block {
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  .stat-num {
+    font-size: 96px;
+    font-weight: 900;
+    color: #FFFFFF;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 14px;
+    font-weight: 700;
+    color: #E5E7EB;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 28px;
+  }
+
+  .auth-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 28px;
+  }
+
+  .auth-label {
+    font-size: 10px;
+    font-weight: 600;
+    color: #9CA3AF;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+  }
+
+  .auth-brands {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1E88E5;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+
+  .all-brands {
+    font-size: 11px;
+    font-weight: 400;
+    color: #9CA3AF;
+    text-align: center;
+  }
+
+  .sidebar-footer {
+    margin-top: auto;
+    padding-bottom: 28px;
+    text-align: center;
+  }
+
+  .cities {
+    font-size: 11px;
+    font-weight: 600;
+    color: #9CA3AF;
+    letter-spacing: 1px;
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  /* ── RIGHT CONTENT ── */
+  .content {
+    flex: 1;
+    height: 1080px;
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    padding: 52px 48px 40px 52px;
+    position: relative;
+  }
+
+  .content-eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    color: #1E88E5;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+
+  .headline {
+    font-size: 52px;
+    font-weight: 900;
+    color: #003B8E;
+    line-height: 1.1;
+    margin-bottom: 24px;
+  }
+
+  .headline span {
+    color: #1E88E5;
+  }
+
+  .divider-content {
+    width: 48px;
+    height: 4px;
+    background: #1E88E5;
+    margin-bottom: 28px;
+  }
+
+  .value-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+
+  .value-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .check-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #1E88E5;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .value-text strong {
+    font-size: 15px;
+    font-weight: 700;
+    color: #003B8E;
+    display: block;
+    line-height: 1.3;
+  }
+
+  .value-text span {
+    font-size: 13px;
+    font-weight: 400;
+    color: #6B7280;
+    line-height: 1.4;
+  }
+
+  .equip-section {
+    margin-bottom: 32px;
+  }
+
+  .equip-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: #9CA3AF;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .equip-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .tag {
+    font-size: 11px;
+    font-weight: 600;
+    color: #003B8E;
+    background: #EFF6FF;
+    border: 1px solid #BFDBFE;
+    border-radius: 4px;
+    padding: 5px 10px;
+    letter-spacing: 0.5px;
+  }
+
+  .cta-area {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    background: #003B8E;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 18px 32px;
+    border-radius: 6px;
+    text-align: center;
+  }
+
+  .handle {
+    font-size: 12px;
+    font-weight: 600;
+    color: #9CA3AF;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<div class="post">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="sidebar-accent"></div>
+
+    <div class="logo-wrap">
+      <img src="/tapera-logo.jpeg" alt="Logo Taperá">
+    </div>
+
+    <div class="brand-name">TAPERÁ</div>
+    <div class="brand-sub">Manutenção Odontológica</div>
+
+    <div class="divider-h"></div>
+
+    <div class="stat-block">
+      <div class="stat-num">26</div>
+    </div>
+    <div class="stat-label">Anos de Experiência</div>
+
+    <div class="auth-section">
+      <div class="auth-label">Assistência Autorizada</div>
+      <div class="auth-brands">OLSEN  ·  EVOTECH</div>
+      <div class="all-brands">Todas as marcas atendidas</div>
+    </div>
+
+    <div class="sidebar-footer">
+      <div class="cities">
+        Salto · Itu<br>
+        Indaiatuba · Cabreúva
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content">
+    <div class="content-eyebrow">APRESENTAÇÃO</div>
+
+    <div class="headline">
+      26 ANOS<br>
+      CUIDANDO DOS<br>
+      <span>SEUS EQUIPAMENTOS</span>
+    </div>
+
+    <div class="divider-content"></div>
+
+    <ul class="value-list">
+      <li>
+        <div class="check-icon">✓</div>
+        <div class="value-text">
+          <strong>Diagnóstico transparente</strong>
+          <span>Orçamento aprovado antes de qualquer serviço</span>
+        </div>
+      </li>
+      <li>
+        <div class="check-icon">✓</div>
+        <div class="value-text">
+          <strong>Garantia de 90 dias por escrito</strong>
+          <span>Segurança real para o seu consultório</span>
+        </div>
+      </li>
+      <li>
+        <div class="check-icon">✓</div>
+        <div class="value-text">
+          <strong>Atendimento em todas as marcas</strong>
+          <span>Cadeiras, compressores, autoclaves e mais</span>
+        </div>
+      </li>
+    </ul>
+
+    <div class="equip-section">
+      <div class="equip-label">Equipamentos Atendidos</div>
+      <div class="equip-tags">
+        <span class="tag">Cadeiras</span>
+        <span class="tag">Compressores</span>
+        <span class="tag">Autoclaves</span>
+        <span class="tag">Canetas</span>
+        <span class="tag">Raio-X</span>
+        <span class="tag">Equipos</span>
+      </div>
+    </div>
+
+    <div class="cta-area">
+      <div class="cta-btn">📲 CONTATO NA BIO</div>
+      <div class="handle">@tapera_manutencoes</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

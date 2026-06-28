@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; height: 1080px; overflow: hidden; font-family: 'Montserrat', sans-serif; }
+
+  .post {
+    width: 1080px;
+    height: 1080px;
+    display: flex;
+    flex-direction: column;
+    background: #FFFFFF;
+  }
+
+  /* TOP HEADER */
+  .post-header {
+    background: #003B8E;
+    padding: 28px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header-left {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .header-eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    color: #1E88E5;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+  }
+
+  .header-title {
+    font-size: 32px;
+    font-weight: 900;
+    color: #FFFFFF;
+    line-height: 1.1;
+  }
+
+  .header-title span {
+    color: #1E88E5;
+  }
+
+  .header-logo {
+    background: #fff;
+    border-radius: 10px;
+    padding: 8px 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .header-logo img {
+    height: 44px;
+    object-fit: contain;
+  }
+
+  .header-logo span {
+    font-size: 15px;
+    font-weight: 800;
+    color: #003B8E;
+  }
+
+  /* INTRO ROW */
+  .intro-row {
+    background: #EFF6FF;
+    padding: 20px 60px;
+    border-bottom: 2px solid #BFDBFE;
+  }
+
+  .intro-text {
+    font-size: 16px;
+    font-weight: 600;
+    color: #003B8E;
+    text-align: center;
+  }
+
+  /* COMPARISON TABLE */
+  .comparison {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .col {
+    display: flex;
+    flex-direction: column;
+    padding: 32px 48px;
+  }
+
+  .col-repair {
+    border-right: 3px solid #E5E7EB;
+  }
+
+  .col-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+
+  .col-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+  }
+
+  .icon-yes { background: #DCFCE7; }
+  .icon-no  { background: #FEE2E2; }
+
+  .col-title {
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.2;
+  }
+
+  .col-title.yes { color: #166534; }
+  .col-title.no  { color: #991B1B; }
+
+  .item-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .item-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .item-marker {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .marker-yes { background: #22C55E; color: #fff; }
+  .marker-no  { background: #EF4444; color: #fff; }
+
+  .item-text strong {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111827;
+    display: block;
+    line-height: 1.3;
+  }
+
+  .item-text span {
+    font-size: 13px;
+    font-weight: 400;
+    color: #6B7280;
+    line-height: 1.4;
+  }
+
+  /* BOTTOM CTA */
+  .bottom-section {
+    background: #003B8E;
+    padding: 28px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .bottom-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .bottom-main {
+    font-size: 17px;
+    font-weight: 800;
+    color: #FFFFFF;
+  }
+
+  .bottom-sub {
+    font-size: 13px;
+    font-weight: 600;
+    color: #9CA3AF;
+  }
+
+  .cta-btn {
+    background: #1E88E5;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 16px 32px;
+    border-radius: 6px;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  /* ACCENT BAR */
+  .accent-bar-bottom {
+    height: 6px;
+    background: #1E88E5;
+  }
+</style>
+</head>
+<body>
+<div class="post">
+
+  <!-- HEADER -->
+  <div class="post-header">
+    <div class="header-left">
+      <div class="header-eyebrow">Guia Prático</div>
+      <div class="header-title">
+        Reparar ou<br>
+        <span>comprar novo?</span>
+      </div>
+    </div>
+    <div class="header-logo">
+      <img src="/tapera-logo.jpeg" alt="Logo">
+      <span>TAPERÁ</span>
+    </div>
+  </div>
+
+  <!-- INTRO -->
+  <div class="intro-row">
+    <div class="intro-text">
+      Antes de gastar R$ 8.000 num equipamento novo, responda: o problema é estrutural ou é desgaste de peça?
+    </div>
+  </div>
+
+  <!-- COMPARISON -->
+  <div class="comparison">
+
+    <!-- VALE REPARAR -->
+    <div class="col col-repair">
+      <div class="col-header">
+        <div class="col-icon icon-yes">✅</div>
+        <div class="col-title yes">Vale reparar<br>quando...</div>
+      </div>
+
+      <ul class="item-list">
+        <li>
+          <div class="item-marker marker-yes">✓</div>
+          <div class="item-text">
+            <strong>A estrutura está em boas condições</strong>
+            <span>Motor, chassis e componentes principais sem dano estrutural</span>
+          </div>
+        </li>
+        <li>
+          <div class="item-marker marker-yes">✓</div>
+          <div class="item-text">
+            <strong>A peça tem reposição no mercado</strong>
+            <span>Peças disponíveis de fabricante ou compatíveis de qualidade</span>
+          </div>
+        </li>
+        <li>
+          <div class="item-marker marker-yes">✓</div>
+          <div class="item-text">
+            <strong>Custo &lt; 40% do equipamento novo</strong>
+            <span>Reparo devolve anos de vida útil por fração do preço</span>
+          </div>
+        </li>
+        <li>
+          <div class="item-marker marker-yes">✓</div>
+          <div class="item-text">
+            <strong>É o primeiro ou segundo reparo</strong>
+            <span>Histórico de manutenção saudável — não um equipamento problemático</span>
+          </div>
+        </li>
+        <li>
+          <div class="item-marker marker-yes">✓</div>
+          <div class="item-text">
+            <strong>Equipamento tem menos de 10 anos</strong>
+            <span>Vida útil preservada com manutenção adequada</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- VALE TROCAR -->
+    <div class="col col-buy">
+      <div class="col-header">
+        <div class="col-icon icon-no">❌</div>
+        <div class="col-title no">Vale trocar<br>quando...</div>
+      </div>
+
+      <ul class="item-list">
+        <li>
+          <div class="item-marker marker-no">✗</div>
+          <div class="item-text">
+            <strong>Passou da vida útil do fabricante</strong>
+            <span>Peças em cascata — consertar um quebra outro</span>
+          </div>
+        </li>
+        <li>
+          <div class="item-marker marker-no">✗</div>
+          <div class="item-text">
+            <strong>Não há mais peça disponível</strong>
+            <span>Equipamento fora de linha sem suporte técnico</span>
+          </div>
+        </li>
+        <li>
+          <div class="item-marker marker-no">✗</div>
+          <div class="item-text">
+            <strong>Custo do reparo &gt; 60% do novo</strong>
+            <span>Investir no reparo não compensa economicamente</span>
+          </div>
+        </li>
+        <li>
+          <div class="item-marker marker-no">✗</div>
+          <div class="item-text">
+            <strong>Reparos viraram rotina mensal</strong>
+            <span>Custo acumulado ultrapassa o valor de um equipamento novo</span>
+          </div>
+        </li>
+        <li>
+          <div class="item-marker marker-no">✗</div>
+          <div class="item-text">
+            <strong>Tecnologia muito defasada</strong>
+            <span>Compromete procedimentos modernos e segurança do paciente</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- BOTTOM CTA -->
+  <div class="bottom-section">
+    <div class="bottom-text">
+      <div class="bottom-main">Na dúvida? A gente faz o diagnóstico com transparência.</div>
+      <div class="bottom-sub">26 anos · Garantia 90 dias · Salto · Itu · Indaiatuba · Cabreúva</div>
+    </div>
+    <div class="cta-btn">📲 CONTATO NA BIO</div>
+  </div>
+
+  <div class="accent-bar-bottom"></div>
+
+</div>
+</body>
+</html>
