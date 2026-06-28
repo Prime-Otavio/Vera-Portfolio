@@ -3,434 +3,245 @@
 <head>
 <meta charset="UTF-8">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { width: 1080px; font-family: 'Montserrat', sans-serif; background: #fff; }
 
-  /* ─── SLIDE BASE ─── */
-  .slide {
-    width: 1080px;
-    height: 1080px;
-    overflow: hidden;
-    position: relative;
-    page-break-after: always;
-  }
+  .slide { width: 1080px; height: 1080px; overflow: hidden; position: relative; }
 
-  /* ── SLIDE 1 — CAPA (navy) ── */
+  /* ── SLIDE 1 — CAPA ── */
   .slide-1 {
     background: #003B8E;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 80px 80px 60px;
-  }
-
-  .slide-1 .logo-chip {
-    background: #fff;
-    border-radius: 12px;
-    padding: 8px 16px;
-    margin-bottom: 40px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .slide-1 .logo-chip img {
-    height: 48px;
-    object-fit: contain;
-  }
-
-  .slide-1 .logo-chip span {
-    font-size: 16px;
-    font-weight: 800;
-    color: #003B8E;
-  }
-
-  .slide-1 .tag-line {
-    font-size: 13px;
-    font-weight: 700;
-    color: #1E88E5;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-
-  .slide-1 .main-title {
-    font-size: 68px;
-    font-weight: 900;
-    color: #FFFFFF;
-    text-align: center;
-    line-height: 1.05;
-    margin-bottom: 16px;
-  }
-
-  .slide-1 .highlight {
-    color: #1E88E5;
-  }
-
-  .slide-1 .sub {
-    font-size: 22px;
-    font-weight: 600;
-    color: #E5E7EB;
-    text-align: center;
-    margin-bottom: 48px;
-    line-height: 1.4;
-  }
-
-  .slide-1 .swipe-hint {
-    font-size: 13px;
-    font-weight: 600;
-    color: #9CA3AF;
-    letter-spacing: 2px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .slide-1 .bottom-bar {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 6px;
-    background: #1E88E5;
-  }
-
-  /* ── SLIDES 2–6 — SINAIS (branco) ── */
-  .slide-sinal {
-    background: #FFFFFF;
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-  }
-
-  .sinal-header {
-    background: #003B8E;
-    padding: 32px 64px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .sinal-num-wrap {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-
-  .sinal-badge {
-    background: #1E88E5;
-    color: #fff;
-    font-size: 13px;
-    font-weight: 800;
-    letter-spacing: 3px;
-    padding: 8px 16px;
-    border-radius: 4px;
-  }
-
-  .sinal-total {
-    font-size: 13px;
-    font-weight: 600;
-    color: #9CA3AF;
-    letter-spacing: 2px;
-  }
-
-  .logo-small {
-    height: 40px;
-    object-fit: contain;
-    background: #fff;
-    border-radius: 6px;
-    padding: 4px 8px;
-  }
-
-  .sinal-body {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 64px 80px;
-  }
-
-  .sinal-icon {
-    font-size: 80px;
-    margin-bottom: 28px;
-    line-height: 1;
-  }
-
-  .sinal-title {
-    font-size: 52px;
-    font-weight: 900;
-    color: #003B8E;
-    line-height: 1.1;
-    margin-bottom: 24px;
-  }
-
-  .sinal-title span {
-    color: #1E88E5;
-  }
-
-  .sinal-divider {
-    width: 60px;
-    height: 4px;
-    background: #1E88E5;
-    margin-bottom: 28px;
-  }
-
-  .sinal-desc {
-    font-size: 22px;
-    font-weight: 400;
-    color: #374151;
-    line-height: 1.55;
-    max-width: 820px;
-  }
-
-  .sinal-alert {
-    margin-top: 40px;
-    background: #EFF6FF;
-    border-left: 5px solid #1E88E5;
-    border-radius: 6px;
-    padding: 20px 24px;
-    font-size: 16px;
-    font-weight: 600;
-    color: #003B8E;
-    max-width: 820px;
-  }
-
-  .sinal-footer {
-    padding: 24px 80px;
-    border-top: 2px solid #E5E7EB;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .sinal-footer-text {
-    font-size: 12px;
-    font-weight: 600;
-    color: #9CA3AF;
-    letter-spacing: 2px;
-  }
-
-  .progress-dots {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-  }
-
-  .dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #E5E7EB;
-  }
-
-  .dot.active {
-    background: #1E88E5;
-    width: 24px;
-    border-radius: 4px;
-  }
-
-  /* ── SLIDE 7 — CTA (navy) ── */
-  .slide-7 {
-    background: #003B8E;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
     padding: 80px;
   }
-
-  .slide-7 .cta-eyebrow {
-    font-size: 13px;
-    font-weight: 700;
-    color: #1E88E5;
-    letter-spacing: 5px;
-    text-transform: uppercase;
-    margin-bottom: 24px;
-    text-align: center;
+  .cover-watermark {
+    position: absolute; right: -120px; bottom: -120px;
+    width: 620px; height: 620px; opacity: 0.08; color: #fff;
   }
-
-  .slide-7 .cta-title {
-    font-size: 52px;
-    font-weight: 900;
-    color: #FFFFFF;
-    text-align: center;
-    line-height: 1.15;
-    margin-bottom: 20px;
+  .cover-watermark svg { width: 100%; height: 100%; }
+  .logo-chip {
+    background:#fff; border-radius:14px; padding:10px 20px; margin-bottom:44px;
+    display:flex; align-items:center; gap:12px; position:relative; z-index:2;
   }
-
-  .slide-7 .cta-sub {
-    font-size: 22px;
-    font-weight: 600;
-    color: #E5E7EB;
-    text-align: center;
-    margin-bottom: 56px;
-    line-height: 1.4;
-    max-width: 780px;
+  .logo-chip img { height:54px; object-fit:contain; }
+  .logo-chip span { font-size:20px; font-weight:800; color:#003B8E; letter-spacing:1px; }
+  .tag-line {
+    font-size:16px; font-weight:700; color:#1E88E5; letter-spacing:6px;
+    text-transform:uppercase; margin-bottom:28px; text-align:center; z-index:2;
   }
-
-  .slide-7 .cta-stats {
-    display: flex;
-    gap: 64px;
-    margin-bottom: 56px;
+  .main-title {
+    font-size:82px; font-weight:900; color:#fff; text-align:center;
+    line-height:1.02; margin-bottom:24px; z-index:2;
   }
-
-  .stat-item {
-    text-align: center;
+  .main-title .highlight { color:#1E88E5; }
+  .cover-sub {
+    font-size:27px; font-weight:600; color:#E5E7EB; text-align:center;
+    margin-bottom:60px; line-height:1.45; z-index:2;
   }
-
-  .stat-item .num {
-    font-size: 52px;
-    font-weight: 900;
-    color: #fff;
-    line-height: 1;
+  .swipe-hint {
+    font-size:17px; font-weight:700; color:#fff; letter-spacing:2px; text-align:center;
+    display:flex; align-items:center; gap:12px; z-index:2;
+    background:rgba(30,136,229,0.25); border:2px solid #1E88E5;
+    padding:14px 28px; border-radius:40px;
   }
+  .bottom-bar { position:absolute; bottom:0; left:0; right:0; height:8px; background:#1E88E5; z-index:3; }
 
-  .stat-item .label {
-    font-size: 12px;
-    font-weight: 600;
-    color: #9CA3AF;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin-top: 6px;
+  /* ── SLIDES 2–6 — SINAIS ── */
+  .slide-sinal { background:#fff; display:flex; flex-direction:column; }
+  .sinal-header {
+    background:#003B8E; padding:36px 64px; display:flex;
+    align-items:center; justify-content:space-between; position:relative; z-index:2;
   }
+  .sinal-num-wrap { display:flex; align-items:center; gap:18px; }
+  .sinal-badge {
+    background:#1E88E5; color:#fff; font-size:16px; font-weight:800;
+    letter-spacing:3px; padding:10px 20px; border-radius:6px;
+  }
+  .sinal-total { font-size:15px; font-weight:700; color:#9CA3AF; letter-spacing:2px; }
+  .logo-small { height:46px; object-fit:contain; background:#fff; border-radius:8px; padding:5px 10px; }
 
+  .sinal-body {
+    flex:1; display:flex; flex-direction:column; justify-content:center;
+    padding:56px 80px; position:relative; overflow:hidden;
+  }
+  /* watermark gigante cruzando a divisa */
+  .sinal-watermark {
+    position:absolute; right:-90px; top:-150px;
+    width:520px; height:520px; opacity:0.07; z-index:0; pointer-events:none;
+  }
+  .sinal-watermark svg { width:100%; height:100%; }
+
+  .sinal-icon-box {
+    width:120px; height:120px; border-radius:24px; background:#EFF6FF;
+    border:2px solid #DBEAFE; display:flex; align-items:center; justify-content:center;
+    margin-bottom:30px; position:relative; z-index:1;
+  }
+  .sinal-icon-box svg { width:78px; height:78px; }
+
+  .sinal-title {
+    font-size:58px; font-weight:900; color:#003B8E; line-height:1.08;
+    margin-bottom:26px; position:relative; z-index:1;
+  }
+  .sinal-title span { color:#1E88E5; }
+  .sinal-divider { width:64px; height:5px; background:#1E88E5; border-radius:3px; margin-bottom:28px; position:relative; z-index:1; }
+  .sinal-desc {
+    font-size:28px; font-weight:500; color:#374151; line-height:1.5;
+    max-width:850px; position:relative; z-index:1;
+  }
+  .sinal-alert {
+    margin-top:38px; background:#EFF6FF; border-left:6px solid #1E88E5; border-radius:8px;
+    padding:24px 28px; font-size:21px; font-weight:600; color:#003B8E;
+    max-width:850px; line-height:1.4; position:relative; z-index:1;
+    display:flex; gap:14px; align-items:flex-start;
+  }
+  .alert-icon { flex-shrink:0; width:30px; height:30px; color:#1E88E5; margin-top:2px; }
+
+  .sinal-footer {
+    padding:26px 80px; border-top:2px solid #E5E7EB;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .sinal-footer-text { font-size:14px; font-weight:600; color:#9CA3AF; letter-spacing:2px; }
+  .progress-dots { display:flex; gap:9px; align-items:center; }
+  .dot { width:9px; height:9px; border-radius:50%; background:#E5E7EB; }
+  .dot.active { background:#1E88E5; width:28px; border-radius:5px; }
+
+  /* ── SLIDE 7 — CTA ── */
+  .slide-7 {
+    background:#003B8E; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; padding:80px;
+  }
+  .cta-watermark {
+    position:absolute; left:-130px; bottom:-130px;
+    width:560px; height:560px; opacity:0.07; color:#fff;
+  }
+  .cta-watermark svg { width:100%; height:100%; }
+  .logo-chip-cta {
+    position:absolute; top:44px; right:48px; background:#fff; border-radius:12px;
+    padding:8px 16px; display:flex; align-items:center; gap:10px; z-index:3;
+  }
+  .logo-chip-cta img { height:40px; object-fit:contain; }
+  .logo-chip-cta span { font-size:15px; font-weight:800; color:#003B8E; }
+  .cta-eyebrow {
+    font-size:16px; font-weight:700; color:#1E88E5; letter-spacing:5px;
+    text-transform:uppercase; margin-bottom:26px; text-align:center; z-index:2;
+  }
+  .cta-title { font-size:60px; font-weight:900; color:#fff; text-align:center; line-height:1.1; margin-bottom:22px; z-index:2; }
+  .cta-sub {
+    font-size:26px; font-weight:600; color:#E5E7EB; text-align:center;
+    margin-bottom:56px; line-height:1.4; max-width:820px; z-index:2;
+  }
+  .cta-stats { display:flex; gap:56px; margin-bottom:56px; z-index:2; }
+  .stat-item { text-align:center; }
+  .stat-item .num { font-size:58px; font-weight:900; color:#fff; line-height:1; }
+  .stat-item .label { font-size:14px; font-weight:600; color:#9CA3AF; letter-spacing:3px; text-transform:uppercase; margin-top:8px; }
   .cta-button {
-    background: #1E88E5;
-    color: #fff;
-    font-size: 18px;
-    font-weight: 800;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    padding: 24px 56px;
-    border-radius: 8px;
-    text-align: center;
-    margin-bottom: 24px;
+    background:#1E88E5; color:#fff; font-size:20px; font-weight:800; letter-spacing:3px;
+    text-transform:uppercase; padding:24px 56px; border-radius:10px; text-align:center;
+    margin-bottom:24px; z-index:2; display:flex; align-items:center; gap:14px;
   }
-
-  .cta-handle {
-    font-size: 13px;
-    font-weight: 600;
-    color: #9CA3AF;
-    letter-spacing: 2px;
-    text-align: center;
-  }
-
+  .cta-button svg { width:30px; height:30px; color:#fff; }
+  .cta-handle { font-size:15px; font-weight:700; color:#fff; letter-spacing:2px; text-align:center; z-index:2; }
   .cta-cities {
-    font-size: 12px;
-    font-weight: 600;
-    color: #9CA3AF;
-    letter-spacing: 1px;
-    text-align: center;
-    margin-top: 12px;
+    font-size:14px; font-weight:600; color:#9CA3AF; letter-spacing:1px;
+    text-align:center; margin-top:14px; z-index:2; display:flex; align-items:center; gap:8px;
   }
-
-  .slide-7 .logo-chip-cta {
-    position: absolute;
-    top: 40px;
-    right: 48px;
-    background: #fff;
-    border-radius: 10px;
-    padding: 6px 14px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .slide-7 .logo-chip-cta img {
-    height: 36px;
-    object-fit: contain;
-  }
-
-  .slide-7 .logo-chip-cta span {
-    font-size: 13px;
-    font-weight: 800;
-    color: #003B8E;
-  }
-
-  .slide-7 .bottom-bar {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 6px;
-    background: #1E88E5;
-  }
+  .cta-cities svg { width:18px; height:18px; color:#9CA3AF; }
 </style>
 </head>
 <body>
 
+<!-- ============ SYMBOL LIBRARY ============ -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="ic-sound" viewBox="0 0 120 120">
+      <path d="M22 48 H40 L60 30 V90 L40 72 H22 Z" fill="none" stroke="#003B8E" stroke-width="5" stroke-linejoin="round"/>
+      <path d="M74 46 Q83 60 74 74" fill="none" stroke="#1E88E5" stroke-width="5" stroke-linecap="round"/>
+      <path d="M86 38 Q101 60 86 82" fill="none" stroke="#1E88E5" stroke-width="5" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="ic-gauge" viewBox="0 0 120 120">
+      <g fill="none" stroke="#003B8E" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="60" cy="62" r="36"/>
+        <line x1="60" y1="30" x2="60" y2="38"/><line x1="92" y1="62" x2="84" y2="62"/><line x1="28" y1="62" x2="36" y2="62"/>
+        <line x1="83" y1="39" x2="77" y2="45"/><line x1="37" y1="39" x2="43" y2="45"/>
+      </g>
+      <line x1="60" y1="62" x2="80" y2="44" stroke="#1E88E5" stroke-width="6" stroke-linecap="round"/>
+      <circle cx="60" cy="62" r="6" fill="#003B8E"/>
+    </symbol>
+    <symbol id="ic-drop" viewBox="0 0 120 120">
+      <path d="M60 20 C60 20 90 58 90 80 A30 30 0 0 1 30 80 C30 58 60 20 60 20 Z" fill="none" stroke="#003B8E" stroke-width="5" stroke-linejoin="round"/>
+      <path d="M48 80 a12 12 0 0 0 9 11" fill="none" stroke="#1E88E5" stroke-width="5" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="ic-handpiece" viewBox="0 0 120 120">
+      <g fill="none" stroke="#003B8E" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M40 92 L86 46 a9 9 0 0 0 0-13 l-1-1 a9 9 0 0 0-13 0 L26 78"/>
+        <path d="M40 92 L26 78"/><circle cx="33" cy="85" r="11"/><line x1="33" y1="96" x2="33" y2="108"/>
+      </g>
+      <path d="M80 18 q7 6 0 13" fill="none" stroke="#1E88E5" stroke-width="4.5" stroke-linecap="round"/>
+      <path d="M94 14 q9 8 0 17" fill="none" stroke="#1E88E5" stroke-width="4.5" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="ic-bolt" viewBox="0 0 120 120">
+      <path d="M68 16 L34 66 H55 L50 104 L88 50 H64 Z" fill="#EFF6FF" stroke="#003B8E" stroke-width="5" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="ic-toothgear" viewBox="0 0 120 120">
+      <path d="M40 24 C30 24 24 32 24 44 C24 60 30 72 34 88 C36 96 44 96 45 88 L48 68 C48 64 54 64 54 68 L57 88 C58 96 66 96 68 88 C72 72 78 60 78 44 C78 32 72 24 62 24 C55 24 54 30 50 30 C46 30 47 24 40 24 Z" fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/>
+      <g fill="none" stroke="currentColor" stroke-width="4" stroke-linejoin="round">
+        <circle cx="86" cy="80" r="13"/><circle cx="86" cy="80" r="5"/>
+        <g stroke-linecap="round">
+          <line x1="86" y1="62" x2="86" y2="67"/><line x1="86" y1="93" x2="86" y2="98"/>
+          <line x1="68" y1="80" x2="73" y2="80"/><line x1="99" y1="80" x2="104" y2="80"/>
+          <line x1="73" y1="67" x2="76" y2="70"/><line x1="96" y1="90" x2="99" y2="93"/>
+          <line x1="99" y1="67" x2="96" y2="70"/><line x1="76" y1="90" x2="73" y2="93"/>
+        </g>
+      </g>
+    </symbol>
+    <symbol id="ic-tap" viewBox="0 0 120 120">
+      <g fill="none" stroke="currentColor" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M52 56 V36 a8 8 0 0 1 16 0 v28"/><path d="M68 52 a7 7 0 0 1 14 0 v6"/>
+        <path d="M82 56 a7 7 0 0 1 12 0 v8"/>
+        <path d="M52 60 l-10 6 a8 8 0 0 0-3 11 l10 18 a14 14 0 0 0 12 7 h16 a14 14 0 0 0 14-13 l1-31"/>
+      </g>
+    </symbol>
+    <symbol id="ic-pin" viewBox="0 0 120 120">
+      <path d="M60 20 a26 26 0 0 1 26 26 c0 20-26 48-26 48 S34 66 34 46 A26 26 0 0 1 60 20 Z" fill="none" stroke="currentColor" stroke-width="6" stroke-linejoin="round"/>
+      <circle cx="60" cy="46" r="9" fill="none" stroke="currentColor" stroke-width="6"/>
+    </symbol>
+    <symbol id="ic-alert" viewBox="0 0 120 120">
+      <path d="M60 22 L104 96 H16 Z" fill="none" stroke="currentColor" stroke-width="7" stroke-linejoin="round"/>
+      <line x1="60" y1="50" x2="60" y2="74" stroke="currentColor" stroke-width="7" stroke-linecap="round"/>
+      <circle cx="60" cy="86" r="2" fill="currentColor" stroke="currentColor" stroke-width="3"/>
+    </symbol>
+  </defs>
+</svg>
+
 <!-- ===== SLIDE 1 — CAPA ===== -->
 <div class="slide slide-1">
-  <div class="logo-chip">
-    <img src="/tapera-logo.jpeg" alt="Logo">
-    <span>TAPERÁ</span>
-  </div>
-
+  <div class="cover-watermark"><svg><use href="#ic-toothgear"/></svg></div>
+  <div class="logo-chip"><img src="/tapera-logo.jpeg" alt="Logo"><span>TAPERÁ</span></div>
   <div class="tag-line">Manutenção Odontológica</div>
-
-  <div class="main-title">
-    5 SINAIS<br>
-    <span class="highlight">QUE SEU EQUIPO</span><br>
-    VAI PARAR
-  </div>
-
-  <div class="sub">
-    Equipamento não para do nada — ele avisa.<br>
-    Descubra antes que seja tarde.
-  </div>
-
-  <div class="swipe-hint">
-    Arraste para ver os sinais →
-  </div>
-
+  <div class="main-title">5 SINAIS<br><span class="highlight">QUE SEU EQUIPO</span><br>VAI PARAR</div>
+  <div class="cover-sub">Equipamento não para do nada — ele avisa.<br>Descubra antes que seja tarde.</div>
+  <div class="swipe-hint">Arraste para ver os sinais →</div>
   <div class="bottom-bar"></div>
 </div>
 
 <!-- ===== SLIDE 2 — SINAL 01 ===== -->
 <div class="slide slide-sinal">
   <div class="sinal-header">
-    <div class="sinal-num-wrap">
-      <div class="sinal-badge">SINAL 01</div>
-      <div class="sinal-total">DE 05</div>
-    </div>
+    <div class="sinal-num-wrap"><div class="sinal-badge">SINAL 01</div><div class="sinal-total">DE 05</div></div>
     <img class="logo-small" src="/tapera-logo.jpeg" alt="Logo">
   </div>
-
   <div class="sinal-body">
-    <div class="sinal-icon">🔊</div>
-
-    <div class="sinal-title">
-      Barulho ou<br>
-      <span>vibração fora</span><br>
-      do normal
-    </div>
-
+    <div class="sinal-watermark"><svg><use href="#ic-sound"/></svg></div>
+    <div class="sinal-icon-box"><svg><use href="#ic-sound"/></svg></div>
+    <div class="sinal-title">Barulho ou <span>vibração</span><br>fora do normal</div>
     <div class="sinal-divider"></div>
-
-    <div class="sinal-desc">
-      Rangidos, estalos ou trepidação são sinais claros de desgaste em peças internas do motor ou rolamentos.
-    </div>
-
-    <div class="sinal-alert">
-      ⚠️ Ignorar esses sons acelera a quebra e pode transformar um reparo simples em substituição total de peças.
-    </div>
+    <div class="sinal-desc">Rangidos, estalos ou trepidação são sinais claros de desgaste em peças internas do motor ou rolamentos.</div>
+    <div class="sinal-alert"><svg class="alert-icon"><use href="#ic-alert"/></svg><div>Ignorar esses sons acelera a quebra e transforma um reparo simples em substituição total de peças.</div></div>
   </div>
-
   <div class="sinal-footer">
     <div class="sinal-footer-text">@tapera_manutencoes</div>
-    <div class="progress-dots">
-      <div class="dot"></div>
-      <div class="dot active"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-    </div>
+    <div class="progress-dots"><div class="dot"></div><div class="dot active"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
     <div class="sinal-footer-text">26 anos de experiência</div>
   </div>
 </div>
@@ -438,44 +249,20 @@
 <!-- ===== SLIDE 3 — SINAL 02 ===== -->
 <div class="slide slide-sinal">
   <div class="sinal-header">
-    <div class="sinal-num-wrap">
-      <div class="sinal-badge">SINAL 02</div>
-      <div class="sinal-total">DE 05</div>
-    </div>
+    <div class="sinal-num-wrap"><div class="sinal-badge">SINAL 02</div><div class="sinal-total">DE 05</div></div>
     <img class="logo-small" src="/tapera-logo.jpeg" alt="Logo">
   </div>
-
   <div class="sinal-body">
-    <div class="sinal-icon">⏱️</div>
-
-    <div class="sinal-title">
-      Demora para<br>
-      atingir a <span>pressão</span><br>
-      de trabalho
-    </div>
-
+    <div class="sinal-watermark"><svg><use href="#ic-gauge"/></svg></div>
+    <div class="sinal-icon-box"><svg><use href="#ic-gauge"/></svg></div>
+    <div class="sinal-title">Demora para atingir<br>a <span>pressão</span> de trabalho</div>
     <div class="sinal-divider"></div>
-
-    <div class="sinal-desc">
-      Se o compressor custa a "encher", pode ser vazamento interno ou desgaste nas válvulas — e o equipo pode travar no meio de um atendimento.
-    </div>
-
-    <div class="sinal-alert">
-      ⚠️ Paciente na cadeira, equipo parado: cada minuto de espera é perda direta de receita e de reputação.
-    </div>
+    <div class="sinal-desc">Se o compressor custa a "encher", pode ser vazamento interno ou desgaste nas válvulas — e o equipo pode travar no meio de um atendimento.</div>
+    <div class="sinal-alert"><svg class="alert-icon"><use href="#ic-alert"/></svg><div>Paciente na cadeira, equipo parado: cada minuto de espera é perda direta de receita e de reputação.</div></div>
   </div>
-
   <div class="sinal-footer">
     <div class="sinal-footer-text">@tapera_manutencoes</div>
-    <div class="progress-dots">
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot active"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-    </div>
+    <div class="progress-dots"><div class="dot"></div><div class="dot"></div><div class="dot active"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
     <div class="sinal-footer-text">26 anos de experiência</div>
   </div>
 </div>
@@ -483,44 +270,20 @@
 <!-- ===== SLIDE 4 — SINAL 03 ===== -->
 <div class="slide slide-sinal">
   <div class="sinal-header">
-    <div class="sinal-num-wrap">
-      <div class="sinal-badge">SINAL 03</div>
-      <div class="sinal-total">DE 05</div>
-    </div>
+    <div class="sinal-num-wrap"><div class="sinal-badge">SINAL 03</div><div class="sinal-total">DE 05</div></div>
     <img class="logo-small" src="/tapera-logo.jpeg" alt="Logo">
   </div>
-
   <div class="sinal-body">
-    <div class="sinal-icon">💧</div>
-
-    <div class="sinal-title">
-      Vazamento de<br>
-      água, ar<br>
-      <span>ou óleo</span>
-    </div>
-
+    <div class="sinal-watermark"><svg><use href="#ic-drop"/></svg></div>
+    <div class="sinal-icon-box"><svg><use href="#ic-drop"/></svg></div>
+    <div class="sinal-title">Vazamento de água,<br>ar <span>ou óleo</span></div>
     <div class="sinal-divider"></div>
-
-    <div class="sinal-desc">
-      Qualquer fluido fora do lugar indica vedação comprometida. Parece pequeno hoje — mas vira caro amanhã.
-    </div>
-
-    <div class="sinal-alert">
-      ⚠️ Vazamentos não se resolvem sozinhos. Quanto antes identificar, menor o estrago — e o valor do reparo.
-    </div>
+    <div class="sinal-desc">Qualquer fluido fora do lugar indica vedação comprometida. Parece pequeno hoje — mas vira caro amanhã.</div>
+    <div class="sinal-alert"><svg class="alert-icon"><use href="#ic-alert"/></svg><div>Vazamentos não se resolvem sozinhos. Quanto antes identificar, menor o estrago — e o valor do reparo.</div></div>
   </div>
-
   <div class="sinal-footer">
     <div class="sinal-footer-text">@tapera_manutencoes</div>
-    <div class="progress-dots">
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot active"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-    </div>
+    <div class="progress-dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot active"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
     <div class="sinal-footer-text">26 anos de experiência</div>
   </div>
 </div>
@@ -528,44 +291,20 @@
 <!-- ===== SLIDE 5 — SINAL 04 ===== -->
 <div class="slide slide-sinal">
   <div class="sinal-header">
-    <div class="sinal-num-wrap">
-      <div class="sinal-badge">SINAL 04</div>
-      <div class="sinal-total">DE 05</div>
-    </div>
+    <div class="sinal-num-wrap"><div class="sinal-badge">SINAL 04</div><div class="sinal-total">DE 05</div></div>
     <img class="logo-small" src="/tapera-logo.jpeg" alt="Logo">
   </div>
-
   <div class="sinal-body">
-    <div class="sinal-icon">🔥</div>
-
-    <div class="sinal-title">
-      Caneta perdendo<br>
-      força ou<br>
-      <span>superaquecendo</span>
-    </div>
-
+    <div class="sinal-watermark"><svg><use href="#ic-handpiece"/></svg></div>
+    <div class="sinal-icon-box"><svg><use href="#ic-handpiece"/></svg></div>
+    <div class="sinal-title">Caneta perdendo força<br>ou <span>superaquecendo</span></div>
     <div class="sinal-divider"></div>
-
-    <div class="sinal-desc">
-      Perda de rotação e calor excessivo comprometem o procedimento clínico e destroem o rolamento — peça cara e essencial.
-    </div>
-
-    <div class="sinal-alert">
-      ⚠️ Continuar usando uma caneta superaquecida pode comprometer o atendimento e a segurança do paciente.
-    </div>
+    <div class="sinal-desc">Perda de rotação e calor excessivo comprometem o procedimento clínico e destroem o rolamento — peça cara e essencial.</div>
+    <div class="sinal-alert"><svg class="alert-icon"><use href="#ic-alert"/></svg><div>Continuar usando uma caneta superaquecida compromete o atendimento e a segurança do paciente.</div></div>
   </div>
-
   <div class="sinal-footer">
     <div class="sinal-footer-text">@tapera_manutencoes</div>
-    <div class="progress-dots">
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot active"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-    </div>
+    <div class="progress-dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot active"></div><div class="dot"></div><div class="dot"></div></div>
     <div class="sinal-footer-text">26 anos de experiência</div>
   </div>
 </div>
@@ -573,86 +312,39 @@
 <!-- ===== SLIDE 6 — SINAL 05 ===== -->
 <div class="slide slide-sinal">
   <div class="sinal-header">
-    <div class="sinal-num-wrap">
-      <div class="sinal-badge">SINAL 05</div>
-      <div class="sinal-total">DE 05</div>
-    </div>
+    <div class="sinal-num-wrap"><div class="sinal-badge">SINAL 05</div><div class="sinal-total">DE 05</div></div>
     <img class="logo-small" src="/tapera-logo.jpeg" alt="Logo">
   </div>
-
   <div class="sinal-body">
-    <div class="sinal-icon">⚡</div>
-
-    <div class="sinal-title">
-      Liga e desliga<br>
-      sozinho ou<br>
-      <span>desarma a energia</span>
-    </div>
-
+    <div class="sinal-watermark"><svg><use href="#ic-bolt"/></svg></div>
+    <div class="sinal-icon-box"><svg><use href="#ic-bolt"/></svg></div>
+    <div class="sinal-title">Liga e desliga sozinho<br>ou <span>desarma a energia</span></div>
     <div class="sinal-divider"></div>
-
-    <div class="sinal-desc">
-      Ciclos curtos e quedas de energia são sinal de falha elétrica ou no pressostato — risco de parada total sem aviso.
-    </div>
-
-    <div class="sinal-alert">
-      ⚠️ Falhas elétricas são imprevisíveis e perigosas. Não espere — diagnóstico imediato é essencial.
-    </div>
+    <div class="sinal-desc">Ciclos curtos e quedas de energia são sinal de falha elétrica ou no pressostato — risco de parada total sem aviso.</div>
+    <div class="sinal-alert"><svg class="alert-icon"><use href="#ic-alert"/></svg><div>Falhas elétricas são imprevisíveis e perigosas. Não espere — diagnóstico imediato é essencial.</div></div>
   </div>
-
   <div class="sinal-footer">
     <div class="sinal-footer-text">@tapera_manutencoes</div>
-    <div class="progress-dots">
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot active"></div>
-      <div class="dot"></div>
-    </div>
+    <div class="progress-dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot active"></div><div class="dot"></div></div>
     <div class="sinal-footer-text">26 anos de experiência</div>
   </div>
 </div>
 
 <!-- ===== SLIDE 7 — CTA ===== -->
 <div class="slide slide-7">
-  <div class="logo-chip-cta">
-    <img src="/tapera-logo.jpeg" alt="Logo">
-    <span>TAPERÁ</span>
-  </div>
-
+  <div class="cta-watermark"><svg><use href="#ic-toothgear"/></svg></div>
+  <div class="logo-chip-cta"><img src="/tapera-logo.jpeg" alt="Logo"><span>TAPERÁ</span></div>
   <div class="cta-eyebrow">Equipo com problema?</div>
-
-  <div class="cta-title">
-    Notou algum<br>
-    desses sinais?
-  </div>
-
-  <div class="cta-sub">
-    Quanto antes chamar, mais barato e rápido resolve.<br>
-    Chame quem tem 26 anos de experiência.
-  </div>
-
+  <div class="cta-title">Notou algum<br>desses sinais?</div>
+  <div class="cta-sub">Quanto antes chamar, mais barato e rápido resolve.<br>Chame quem tem 26 anos de experiência.</div>
   <div class="cta-stats">
-    <div class="stat-item">
-      <div class="num">26</div>
-      <div class="label">Anos</div>
-    </div>
-    <div class="stat-item">
-      <div class="num">90</div>
-      <div class="label">Dias garantia</div>
-    </div>
-    <div class="stat-item">
-      <div class="num">100%</div>
-      <div class="label">Marcas</div>
-    </div>
+    <div class="stat-item"><div class="num">26</div><div class="label">Anos</div></div>
+    <div class="stat-item"><div class="num">90</div><div class="label">Dias garantia</div></div>
+    <div class="stat-item"><div class="num">100%</div><div class="label">Marcas</div></div>
   </div>
-
-  <div class="cta-button">📲 CONTATO NA BIO</div>
+  <div class="cta-button"><svg><use href="#ic-tap"/></svg> CONTATO NA BIO</div>
   <div class="cta-handle">@tapera_manutencoes</div>
-  <div class="cta-cities">📍 Salto · Itu · Indaiatuba · Cabreúva</div>
-
+  <div class="cta-cities"><svg><use href="#ic-pin"/></svg> Salto · Itu · Indaiatuba · Cabreúva</div>
   <div class="bottom-bar"></div>
 </div>
 
